@@ -61,7 +61,7 @@ opam exec -- dune exec aoc_hardcaml -- export  # Generate Verilog
 **Total: 22 unique circuits** across 12 days.
 
 ## FPGA Submission
-> The challenge mentioned the importance of originality, but I did use extensive Copilot for documentation and code generations. This was both due to inexperience with Hardcaml and the first time I have done a large code project with agentic AI and I was curious how it would go. I tried to be careful to verify correctness and understand everything that was generated, but I did not write all of the code myself.
+> The challenge mentioned the importance of originality, so for disclosure I did use extensive Copilot for documentation and code generations. This was mostly because I started this project on Monday on a whim and was curious how far agentic AI had progressed. I hadn't built anything substantial through LLMs before so I was curious how well it would work for a project that was very self-contained and testable. 
 
 For Jane Street's Advent of FPGA 2025 submission details, including:
 - Benchmark methodology & timing estimates
