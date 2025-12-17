@@ -1,0 +1,9 @@
+# This file is used internally by FFMPEG.
+file 'file:/Users/tatestaples/Code/AdventOfCode2025/animations/media/videos/day2/720p30/partial_movie_files/Day2Algorithm/1987512680_3778862058_223132457.mp4'
+file 'file:/Users/tatestaples/Code/AdventOfCode2025/animations/media/videos/day2/720p30/partial_movie_files/Day2Algorithm/2538612922_2680541828_2198611086.mp4'
+file 'file:/Users/tatestaples/Code/AdventOfCode2025/animations/media/videos/day2/720p30/partial_movie_files/Day2Algorithm/2538612922_889378417_3295038947.mp4'
+file 'file:/Users/tatestaples/Code/AdventOfCode2025/animations/media/videos/day2/720p30/partial_movie_files/Day2Algorithm/2538612922_1309912015_189070382.mp4'
+file 'file:/Users/tatestaples/Code/AdventOfCode2025/animations/media/videos/day2/720p30/partial_movie_files/Day2Algorithm/2538612922_55087985_789166079.mp4'
+file 'file:/Users/tatestaples/Code/AdventOfCode2025/animations/media/videos/day2/720p30/partial_movie_files/Day2Algorithm/2538612922_3661362613_458663102.mp4'
+file 'file:/Users/tatestaples/Code/AdventOfCode2025/animations/media/videos/day2/720p30/partial_movie_files/Day2Algorithm/2538612922_2455626878_2973740992.mp4'
+file 'file:/Users/tatestaples/Code/AdventOfCode2025/animations/media/videos/day2/720p30/partial_movie_files/Day2Algorithm/2538612922_2688965532_3166206980.mp4'

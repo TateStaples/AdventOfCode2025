@@ -1,0 +1,1 @@
+[timeout] exceeded 5.0s (elapsed 5.0s): yosys -p read_verilog -sv build/day4_opt_c.v; hierarchy -top day4_opt_c; proc; opt -fast; memory; opt -fast; techmap; opt -fast; stat -json

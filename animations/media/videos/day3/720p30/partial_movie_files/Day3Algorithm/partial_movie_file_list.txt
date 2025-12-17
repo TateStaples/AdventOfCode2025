@@ -1,0 +1,4 @@
+# This file is used internally by FFMPEG.
+file 'file:/Users/tatestaples/Code/AdventOfCode2025/animations/media/videos/day3/720p30/partial_movie_files/Day3Algorithm/1987512680_4283129948_223132457.mp4'
+file 'file:/Users/tatestaples/Code/AdventOfCode2025/animations/media/videos/day3/720p30/partial_movie_files/Day3Algorithm/2538612922_1484596903_2138745931.mp4'
+file 'file:/Users/tatestaples/Code/AdventOfCode2025/animations/media/videos/day3/720p30/partial_movie_files/Day3Algorithm/2538612922_2688965532_3250219288.mp4'

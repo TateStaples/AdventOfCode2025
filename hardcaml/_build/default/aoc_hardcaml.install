@@ -1,0 +1,13 @@
+lib: [
+  "_build/install/default/lib/aoc_hardcaml/META"
+  "_build/install/default/lib/aoc_hardcaml/dune-package"
+  "_build/install/default/lib/aoc_hardcaml/opam"
+]
+bin: [
+  "_build/install/default/bin/aoc_hardcaml"
+  "_build/install/default/bin/aoc_hardcaml_bench"
+  "_build/install/default/bin/aoc_hardcaml_validate"
+]
+doc: [
+  "_build/install/default/doc/aoc_hardcaml/README.md"
+]

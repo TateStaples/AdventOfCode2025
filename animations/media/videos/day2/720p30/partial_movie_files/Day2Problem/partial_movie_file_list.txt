@@ -1,0 +1,5 @@
+# This file is used internally by FFMPEG.
+file 'file:/Users/tatestaples/Code/AdventOfCode2025/animations/media/videos/day2/720p30/partial_movie_files/Day2Problem/1987512680_824643675_223132457.mp4'
+file 'file:/Users/tatestaples/Code/AdventOfCode2025/animations/media/videos/day2/720p30/partial_movie_files/Day2Problem/2538612922_2939651951_2022685255.mp4'
+file 'file:/Users/tatestaples/Code/AdventOfCode2025/animations/media/videos/day2/720p30/partial_movie_files/Day2Problem/2538612922_356720951_3816113255.mp4'
+file 'file:/Users/tatestaples/Code/AdventOfCode2025/animations/media/videos/day2/720p30/partial_movie_files/Day2Problem/2538612922_2688965532_1459320981.mp4'

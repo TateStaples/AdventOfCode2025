@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/Users/tatestaples/Code/AdventOfCode2025/hardcaml/scripts/run_with_timeout.py", line 82, in <module>
+    raise SystemExit(main(sys.argv[1:]))
+                     ~~~~^^^^^^^^^^^^^^
+  File "/Users/tatestaples/Code/AdventOfCode2025/hardcaml/scripts/run_with_timeout.py", line 63, in main
+    return proc.wait(timeout=args.timeout_secs)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/subprocess.py", line 1274, in wait
+    return self._wait(timeout=timeout)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/subprocess.py", line 2054, in _wait
+    time.sleep(delay)
+    ~~~~~~~~~~^^^^^^^
+KeyboardInterrupt

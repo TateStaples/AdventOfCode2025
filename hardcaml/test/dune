@@ -1,0 +1,3 @@
+(test
+ (name test_aoc_hardcaml)
+ (libraries core hardcaml aoc_hardcaml))

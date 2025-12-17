@@ -1,0 +1,820 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2025  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.60 (git sha1 5bafeb77dc71e054fa331ab9efa613e6fb0a1c49, clang++ 17.0.0 -fPIC -O3)
+
+-- Running command `read_verilog -sv build/day1_opt_a.v; synth -top day1_opt_a; stat -tech cmos -json' --
+
+1. Executing Verilog-2005 frontend: build/day1_opt_a.v
+Parsing SystemVerilog input from `build/day1_opt_a.v' to AST representation.
+verilog frontend filename build/day1_opt_a.v
+Generating RTLIL representation for module `\day1_opt_a'.
+Successfully finished Verilog frontend.
+
+2. Executing SYNTH pass.
+
+2.1. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1.1. Analyzing design hierarchy..
+Top module:  \day1_opt_a
+
+2.1.2. Analyzing design hierarchy..
+Top module:  \day1_opt_a
+Removed 0 unused modules.
+
+2.2. Executing PROC pass (convert processes to netlists).
+
+2.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+2.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$build/day1_opt_a.v:228$35 in module day1_opt_a.
+Marked 1 switch rules as full_case in process $proc$build/day1_opt_a.v:207$25 in module day1_opt_a.
+Marked 1 switch rules as full_case in process $proc$build/day1_opt_a.v:153$14 in module day1_opt_a.
+Removed a total of 0 dead cases.
+
+2.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 3 redundant assignments.
+Promoted 0 assignments to connections.
+
+2.2.4. Executing PROC_INIT pass (extract init attributes).
+
+2.2.5. Executing PROC_ARST pass (detect async resets in processes).
+
+2.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~3 debug messages>
+
+2.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\day1_opt_a.$proc$build/day1_opt_a.v:228$35'.
+     1/1: $0\_118[31:0]
+Creating decoders for process `\day1_opt_a.$proc$build/day1_opt_a.v:207$25'.
+     1/1: $0\_20[9:0]
+Creating decoders for process `\day1_opt_a.$proc$build/day1_opt_a.v:153$14'.
+     1/1: $0\_23[31:0]
+
+2.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+2.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\day1_opt_a.\_118' using process `\day1_opt_a.$proc$build/day1_opt_a.v:228$35'.
+  created $dff cell `$procdff$45' with positive edge clock.
+Creating register for signal `\day1_opt_a.\_20' using process `\day1_opt_a.$proc$build/day1_opt_a.v:207$25'.
+  created $dff cell `$procdff$46' with positive edge clock.
+Creating register for signal `\day1_opt_a.\_23' using process `\day1_opt_a.$proc$build/day1_opt_a.v:153$14'.
+  created $dff cell `$procdff$47' with positive edge clock.
+
+2.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+2.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\day1_opt_a.$proc$build/day1_opt_a.v:228$35'.
+Removing empty process `day1_opt_a.$proc$build/day1_opt_a.v:228$35'.
+Found and cleaned up 1 empty switch in `\day1_opt_a.$proc$build/day1_opt_a.v:207$25'.
+Removing empty process `day1_opt_a.$proc$build/day1_opt_a.v:207$25'.
+Found and cleaned up 1 empty switch in `\day1_opt_a.$proc$build/day1_opt_a.v:153$14'.
+Removing empty process `day1_opt_a.$proc$build/day1_opt_a.v:153$14'.
+Cleaned up 3 empty switches.
+
+2.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module day1_opt_a.
+<suppressed ~1 debug messages>
+
+2.3. Executing OPT_EXPR pass (perform const folding).
+Optimizing module day1_opt_a.
+<suppressed ~3 debug messages>
+
+2.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \day1_opt_a..
+Removed 0 unused cells and 38 unused wires.
+<suppressed ~1 debug messages>
+
+2.5. Executing CHECK pass (checking for obvious problems).
+Checking module day1_opt_a...
+Found and reported 0 problems.
+
+2.6. Executing OPT pass (performing simple optimizations).
+
+2.6.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module day1_opt_a.
+
+2.6.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\day1_opt_a'.
+<suppressed ~6 debug messages>
+Removed a total of 2 cells.
+
+2.6.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \day1_opt_a..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~15 debug messages>
+
+2.6.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \day1_opt_a.
+Performed a total of 0 changes.
+
+2.6.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\day1_opt_a'.
+Removed a total of 0 cells.
+
+2.6.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.6.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \day1_opt_a..
+
+2.6.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module day1_opt_a.
+
+2.6.9. Finished fast OPT passes. (There is nothing left to do.)
+
+2.7. Executing FSM pass (extract and optimize FSM).
+
+2.7.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+2.7.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+2.7.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+2.7.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \day1_opt_a..
+
+2.7.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+2.7.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+2.7.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+2.7.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+2.8. Executing OPT pass (performing simple optimizations).
+
+2.8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module day1_opt_a.
+
+2.8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\day1_opt_a'.
+Removed a total of 0 cells.
+
+2.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \day1_opt_a..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~15 debug messages>
+
+2.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \day1_opt_a.
+Performed a total of 0 changes.
+
+2.8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\day1_opt_a'.
+Removed a total of 0 cells.
+
+2.8.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $procdff$47 ($dff) from module day1_opt_a (D = \_2, Q = \_23, rval = 0).
+Adding EN signal on $auto$ff.cc:337:slice$48 ($sdff) from module day1_opt_a (D = \_67, Q = \_23).
+Adding SRST signal on $procdff$46 ($dff) from module day1_opt_a (D = \_10, Q = \_20, rval = 10'0000110010).
+Adding EN signal on $auto$ff.cc:337:slice$50 ($sdff) from module day1_opt_a (D = \_114, Q = \_20).
+Adding SRST signal on $procdff$45 ($dff) from module day1_opt_a (D = \_126, Q = \_118, rval = 0).
+Adding EN signal on $auto$ff.cc:337:slice$52 ($sdff) from module day1_opt_a (D = \_125, Q = \_118).
+
+2.8.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \day1_opt_a..
+Removed 6 unused cells and 9 unused wires.
+<suppressed ~13 debug messages>
+
+2.8.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module day1_opt_a.
+
+2.8.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.8.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \day1_opt_a..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~6 debug messages>
+
+2.8.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \day1_opt_a.
+Performed a total of 0 changes.
+
+2.8.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\day1_opt_a'.
+Removed a total of 0 cells.
+
+2.8.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.8.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \day1_opt_a..
+
+2.8.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module day1_opt_a.
+
+2.8.16. Finished fast OPT passes. (There is nothing left to do.)
+
+2.9. Executing WREDUCE pass (reducing word size of cells).
+Removed top 8 bits (of 18) from port A of cell day1_opt_a.$add$build/day1_opt_a.v:114$1 ($add).
+Removed top 2 bits (of 18) from port B of cell day1_opt_a.$add$build/day1_opt_a.v:114$1 ($add).
+Removed top 1 bits (of 18) from port Y of cell day1_opt_a.$add$build/day1_opt_a.v:114$1 ($add).
+Removed top 33 bits (of 50) from port A of cell day1_opt_a.$mul$build/day1_opt_a.v:117$2 ($mul).
+Removed top 24 bits (of 50) from port B of cell day1_opt_a.$mul$build/day1_opt_a.v:117$2 ($mul).
+Removed top 57 bits (of 100) from port Y of cell day1_opt_a.$mul$build/day1_opt_a.v:117$2 ($mul).
+Removed top 8 bits (of 18) from port A of cell day1_opt_a.$sub$build/day1_opt_a.v:124$3 ($sub).
+Removed top 2 bits (of 18) from port B of cell day1_opt_a.$sub$build/day1_opt_a.v:124$3 ($sub).
+Removed top 1 bits (of 18) from port Y of cell day1_opt_a.$sub$build/day1_opt_a.v:124$3 ($sub).
+Converting cell day1_opt_a.$sub$build/day1_opt_a.v:125$4 ($sub) from unsigned to signed.
+Removed top 1 bits (of 18) from port A of cell day1_opt_a.$sub$build/day1_opt_a.v:125$4 ($sub).
+Removed top 16 bits (of 18) from port B of cell day1_opt_a.$sub$build/day1_opt_a.v:125$4 ($sub).
+Removed top 1 bits (of 18) from port B of cell day1_opt_a.$add$build/day1_opt_a.v:126$5 ($add).
+Removed top 32 bits (of 50) from port A of cell day1_opt_a.$mul$build/day1_opt_a.v:129$6 ($mul).
+Removed top 24 bits (of 50) from port B of cell day1_opt_a.$mul$build/day1_opt_a.v:129$6 ($mul).
+Removed top 56 bits (of 100) from port Y of cell day1_opt_a.$mul$build/day1_opt_a.v:129$6 ($mul).
+Removed top 8 bits (of 18) from port A of cell day1_opt_a.$sub$build/day1_opt_a.v:135$7 ($sub).
+Removed top 17 bits (of 18) from port B of cell day1_opt_a.$sub$build/day1_opt_a.v:135$7 ($sub).
+Removed top 7 bits (of 18) from port Y of cell day1_opt_a.$sub$build/day1_opt_a.v:135$7 ($sub).
+Removed top 1 bits (of 18) from port B of cell day1_opt_a.$add$build/day1_opt_a.v:136$8 ($add).
+Removed top 32 bits (of 50) from port A of cell day1_opt_a.$mul$build/day1_opt_a.v:139$9 ($mul).
+Removed top 24 bits (of 50) from port B of cell day1_opt_a.$mul$build/day1_opt_a.v:139$9 ($mul).
+Removed top 56 bits (of 100) from port Y of cell day1_opt_a.$mul$build/day1_opt_a.v:139$9 ($mul).
+Removed top 6 bits (of 18) from port A of cell day1_opt_a.$sub$build/day1_opt_a.v:144$10 ($sub).
+Removed top 6 bits (of 18) from port B of cell day1_opt_a.$sub$build/day1_opt_a.v:144$10 ($sub).
+Removed top 5 bits (of 18) from port Y of cell day1_opt_a.$sub$build/day1_opt_a.v:144$10 ($sub).
+Removed top 16 bits (of 32) from port B of cell day1_opt_a.$add$build/day1_opt_a.v:150$12 ($add).
+Removed top 7 bits (of 18) from port A of cell day1_opt_a.$mul$build/day1_opt_a.v:169$16 ($mul).
+Removed top 11 bits (of 16) from port B of cell day1_opt_a.$mul$build/day1_opt_a.v:169$16 ($mul).
+Removed top 18 bits (of 34) from port Y of cell day1_opt_a.$mul$build/day1_opt_a.v:169$16 ($mul).
+Removed top 1 bits (of 18) from port A of cell day1_opt_a.$sub$build/day1_opt_a.v:172$18 ($sub).
+Removed top 8 bits (of 18) from port Y of cell day1_opt_a.$sub$build/day1_opt_a.v:172$18 ($sub).
+Removed top 7 bits (of 17) from port A of cell day1_opt_a.$sub$build/day1_opt_a.v:172$18 ($sub).
+Removed top 8 bits (of 18) from port B of cell day1_opt_a.$sub$build/day1_opt_a.v:172$18 ($sub).
+Removed top 32 bits (of 50) from port A of cell day1_opt_a.$mul$build/day1_opt_a.v:176$19 ($mul).
+Removed top 24 bits (of 50) from port B of cell day1_opt_a.$mul$build/day1_opt_a.v:176$19 ($mul).
+Removed top 56 bits (of 100) from port Y of cell day1_opt_a.$mul$build/day1_opt_a.v:176$19 ($mul).
+Removed top 6 bits (of 18) from port A of cell day1_opt_a.$mul$build/day1_opt_a.v:181$20 ($mul).
+Removed top 11 bits (of 16) from port B of cell day1_opt_a.$mul$build/day1_opt_a.v:181$20 ($mul).
+Removed top 18 bits (of 34) from port Y of cell day1_opt_a.$mul$build/day1_opt_a.v:181$20 ($mul).
+Removed top 34 bits (of 50) from port A of cell day1_opt_a.$mul$build/day1_opt_a.v:185$21 ($mul).
+Removed top 24 bits (of 50) from port B of cell day1_opt_a.$mul$build/day1_opt_a.v:185$21 ($mul).
+Removed top 58 bits (of 100) from port Y of cell day1_opt_a.$mul$build/day1_opt_a.v:185$21 ($mul).
+Removed top 8 bits (of 18) from port A of cell day1_opt_a.$mul$build/day1_opt_a.v:190$22 ($mul).
+Removed top 11 bits (of 16) from port B of cell day1_opt_a.$mul$build/day1_opt_a.v:190$22 ($mul).
+Removed top 19 bits (of 34) from port Y of cell day1_opt_a.$mul$build/day1_opt_a.v:190$22 ($mul).
+Removed top 2 bits (of 18) from port A of cell day1_opt_a.$sub$build/day1_opt_a.v:196$23 ($sub).
+Removed top 1 bits (of 18) from port B of cell day1_opt_a.$sub$build/day1_opt_a.v:196$23 ($sub).
+Removed top 8 bits (of 18) from port Y of cell day1_opt_a.$sub$build/day1_opt_a.v:196$23 ($sub).
+Removed top 6 bits (of 16) from port A of cell day1_opt_a.$sub$build/day1_opt_a.v:196$23 ($sub).
+Removed top 7 bits (of 17) from port B of cell day1_opt_a.$sub$build/day1_opt_a.v:196$23 ($sub).
+Removed top 8 bits (of 18) from port A of cell day1_opt_a.$add$build/day1_opt_a.v:215$26 ($add).
+Removed top 11 bits (of 18) from port B of cell day1_opt_a.$add$build/day1_opt_a.v:215$26 ($add).
+Removed top 7 bits (of 18) from port Y of cell day1_opt_a.$add$build/day1_opt_a.v:215$26 ($add).
+Removed top 7 bits (of 18) from port A of cell day1_opt_a.$sub$build/day1_opt_a.v:216$27 ($sub).
+Removed top 8 bits (of 18) from port B of cell day1_opt_a.$sub$build/day1_opt_a.v:216$27 ($sub).
+Removed top 6 bits (of 18) from port Y of cell day1_opt_a.$sub$build/day1_opt_a.v:216$27 ($sub).
+Removed top 8 bits (of 18) from port Y of cell day1_opt_a.$sub$build/day1_opt_a.v:217$28 ($sub).
+Removed top 8 bits (of 18) from port A of cell day1_opt_a.$sub$build/day1_opt_a.v:217$28 ($sub).
+Removed top 8 bits (of 18) from port B of cell day1_opt_a.$sub$build/day1_opt_a.v:217$28 ($sub).
+Removed top 31 bits (of 32) from mux cell day1_opt_a.$ternary$build/day1_opt_a.v:223$32 ($mux).
+Removed top 31 bits (of 32) from port B of cell day1_opt_a.$add$build/day1_opt_a.v:224$33 ($add).
+Removed top 8 bits (of 16) from port Y of cell day1_opt_a.$mul$build/day1_opt_a.v:169$16 ($mul).
+Removed top 8 bits (of 16) from port Y of cell day1_opt_a.$mul$build/day1_opt_a.v:181$20 ($mul).
+Removed top 7 bits (of 15) from port Y of cell day1_opt_a.$mul$build/day1_opt_a.v:190$22 ($mul).
+Removed top 1 bits (of 18) from wire day1_opt_a._100.
+Removed top 57 bits (of 100) from wire day1_opt_a._105.
+Removed top 26 bits (of 36) from wire day1_opt_a._110.
+Removed top 8 bits (of 18) from wire day1_opt_a._111.
+Removed top 31 bits (of 32) from wire day1_opt_a._124.
+Removed top 8 bits (of 18) from wire day1_opt_a._30.
+Removed top 1 bits (of 18) from wire day1_opt_a._57.
+Removed top 33 bits (of 50) from wire day1_opt_a._58.
+Removed top 7 bits (of 18) from wire day1_opt_a._70.
+Removed top 58 bits (of 100) from wire day1_opt_a._76.
+Removed top 26 bits (of 36) from wire day1_opt_a._81.
+Removed top 8 bits (of 18) from wire day1_opt_a._82.
+Removed top 56 bits (of 100) from wire day1_opt_a._91.
+
+2.10. Executing PEEPOPT pass (run peephole optimizers).
+
+2.11. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \day1_opt_a..
+Removed 0 unused cells and 12 unused wires.
+<suppressed ~1 debug messages>
+
+2.12. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module day1_opt_a:
+  creating $macc model for $add$build/day1_opt_a.v:114$1 ($add).
+  creating $macc model for $add$build/day1_opt_a.v:126$5 ($add).
+  creating $macc model for $add$build/day1_opt_a.v:136$8 ($add).
+  creating $macc model for $add$build/day1_opt_a.v:150$12 ($add).
+  creating $macc model for $add$build/day1_opt_a.v:215$26 ($add).
+  creating $macc model for $add$build/day1_opt_a.v:224$33 ($add).
+  creating $macc model for $mul$build/day1_opt_a.v:117$2 ($mul).
+  creating $macc model for $mul$build/day1_opt_a.v:129$6 ($mul).
+  creating $macc model for $mul$build/day1_opt_a.v:139$9 ($mul).
+  creating $macc model for $mul$build/day1_opt_a.v:169$16 ($mul).
+  creating $macc model for $mul$build/day1_opt_a.v:176$19 ($mul).
+  creating $macc model for $mul$build/day1_opt_a.v:181$20 ($mul).
+  creating $macc model for $mul$build/day1_opt_a.v:185$21 ($mul).
+  creating $macc model for $mul$build/day1_opt_a.v:190$22 ($mul).
+  creating $macc model for $sub$build/day1_opt_a.v:124$3 ($sub).
+  creating $macc model for $sub$build/day1_opt_a.v:125$4 ($sub).
+  creating $macc model for $sub$build/day1_opt_a.v:135$7 ($sub).
+  creating $macc model for $sub$build/day1_opt_a.v:144$10 ($sub).
+  creating $macc model for $sub$build/day1_opt_a.v:172$18 ($sub).
+  creating $macc model for $sub$build/day1_opt_a.v:196$23 ($sub).
+  creating $macc model for $sub$build/day1_opt_a.v:216$27 ($sub).
+  creating $macc model for $sub$build/day1_opt_a.v:217$28 ($sub).
+  merging $macc model for $add$build/day1_opt_a.v:215$26 into $sub$build/day1_opt_a.v:216$27.
+  merging $macc model for $sub$build/day1_opt_a.v:125$4 into $add$build/day1_opt_a.v:126$5.
+  creating $alu model for $macc $sub$build/day1_opt_a.v:196$23.
+  creating $alu model for $macc $sub$build/day1_opt_a.v:172$18.
+  creating $alu model for $macc $sub$build/day1_opt_a.v:144$10.
+  creating $alu model for $macc $sub$build/day1_opt_a.v:135$7.
+  creating $alu model for $macc $sub$build/day1_opt_a.v:217$28.
+  creating $alu model for $macc $sub$build/day1_opt_a.v:124$3.
+  creating $alu model for $macc $add$build/day1_opt_a.v:224$33.
+  creating $alu model for $macc $add$build/day1_opt_a.v:150$12.
+  creating $alu model for $macc $add$build/day1_opt_a.v:136$8.
+  creating $alu model for $macc $add$build/day1_opt_a.v:114$1.
+  creating $macc cell for $mul$build/day1_opt_a.v:169$16: $auto$alumacc.cc:382:replace_macc$67
+  creating $macc cell for $mul$build/day1_opt_a.v:139$9: $auto$alumacc.cc:382:replace_macc$68
+  creating $macc cell for $mul$build/day1_opt_a.v:129$6: $auto$alumacc.cc:382:replace_macc$69
+  creating $macc cell for $mul$build/day1_opt_a.v:117$2: $auto$alumacc.cc:382:replace_macc$70
+  creating $macc cell for $mul$build/day1_opt_a.v:190$22: $auto$alumacc.cc:382:replace_macc$71
+  creating $macc cell for $sub$build/day1_opt_a.v:216$27: $auto$alumacc.cc:382:replace_macc$72
+  creating $macc cell for $mul$build/day1_opt_a.v:185$21: $auto$alumacc.cc:382:replace_macc$73
+  creating $macc cell for $mul$build/day1_opt_a.v:181$20: $auto$alumacc.cc:382:replace_macc$74
+  creating $macc cell for $add$build/day1_opt_a.v:126$5: $auto$alumacc.cc:382:replace_macc$75
+  creating $macc cell for $mul$build/day1_opt_a.v:176$19: $auto$alumacc.cc:382:replace_macc$76
+  creating $alu cell for $add$build/day1_opt_a.v:136$8: $auto$alumacc.cc:512:replace_alu$77
+  creating $alu cell for $add$build/day1_opt_a.v:150$12: $auto$alumacc.cc:512:replace_alu$80
+  creating $alu cell for $add$build/day1_opt_a.v:224$33: $auto$alumacc.cc:512:replace_alu$83
+  creating $alu cell for $add$build/day1_opt_a.v:114$1: $auto$alumacc.cc:512:replace_alu$86
+  creating $alu cell for $sub$build/day1_opt_a.v:124$3: $auto$alumacc.cc:512:replace_alu$89
+  creating $alu cell for $sub$build/day1_opt_a.v:217$28: $auto$alumacc.cc:512:replace_alu$92
+  creating $alu cell for $sub$build/day1_opt_a.v:135$7: $auto$alumacc.cc:512:replace_alu$95
+  creating $alu cell for $sub$build/day1_opt_a.v:144$10: $auto$alumacc.cc:512:replace_alu$98
+  creating $alu cell for $sub$build/day1_opt_a.v:172$18: $auto$alumacc.cc:512:replace_alu$101
+  creating $alu cell for $sub$build/day1_opt_a.v:196$23: $auto$alumacc.cc:512:replace_alu$104
+  created 10 $alu and 10 $macc cells.
+
+2.13. Executing SHARE pass (SAT-based resource sharing).
+
+2.14. Executing OPT pass (performing simple optimizations).
+
+2.14.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module day1_opt_a.
+
+2.14.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\day1_opt_a'.
+Removed a total of 0 cells.
+
+2.14.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \day1_opt_a..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~6 debug messages>
+
+2.14.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \day1_opt_a.
+Performed a total of 0 changes.
+
+2.14.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\day1_opt_a'.
+Removed a total of 0 cells.
+
+2.14.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.14.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \day1_opt_a..
+Removed 2 unused cells and 2 unused wires.
+<suppressed ~4 debug messages>
+
+2.14.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module day1_opt_a.
+
+2.14.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.14.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \day1_opt_a..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~6 debug messages>
+
+2.14.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \day1_opt_a.
+Performed a total of 0 changes.
+
+2.14.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\day1_opt_a'.
+Removed a total of 0 cells.
+
+2.14.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.14.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \day1_opt_a..
+
+2.14.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module day1_opt_a.
+
+2.14.16. Finished fast OPT passes. (There is nothing left to do.)
+
+2.15. Executing MEMORY pass.
+
+2.15.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+2.15.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+2.15.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+2.15.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+2.15.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+2.15.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \day1_opt_a..
+
+2.15.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+2.15.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+2.15.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \day1_opt_a..
+
+2.15.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+2.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \day1_opt_a..
+
+2.17. Executing OPT pass (performing simple optimizations).
+
+2.17.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module day1_opt_a.
+<suppressed ~55 debug messages>
+
+2.17.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\day1_opt_a'.
+Removed a total of 0 cells.
+
+2.17.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.17.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \day1_opt_a..
+Removed 6 unused cells and 6 unused wires.
+<suppressed ~7 debug messages>
+
+2.17.5. Finished fast OPT passes.
+
+2.18. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+2.19. Executing OPT pass (performing simple optimizations).
+
+2.19.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module day1_opt_a.
+
+2.19.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\day1_opt_a'.
+Removed a total of 0 cells.
+
+2.19.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \day1_opt_a..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+2.19.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \day1_opt_a.
+    Consolidated identical input bits for $mux cell $ternary$build/day1_opt_a.v:146$11:
+      Old ports: A={ \_53 [15] \_53 [15] \_53 [15] \_53 [15] \_53 [11:0] }, B={ 5'00000 \_105 [42:32] }, Y=\_65
+      New ports: A={ \_53 [15] \_53 [11:0] }, B={ 2'00 \_105 [42:32] }, Y=\_65 [12:0]
+      New connections: \_65 [15:13] = { \_65 [12] \_65 [12] \_65 [12] }
+  Optimizing cells in module \day1_opt_a.
+Performed a total of 1 changes.
+
+2.19.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\day1_opt_a'.
+Removed a total of 0 cells.
+
+2.19.6. Executing OPT_SHARE pass.
+
+2.19.7. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.19.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \day1_opt_a..
+
+2.19.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module day1_opt_a.
+
+2.19.10. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.19.11. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \day1_opt_a..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+2.19.12. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \day1_opt_a.
+Performed a total of 0 changes.
+
+2.19.13. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\day1_opt_a'.
+Removed a total of 0 cells.
+
+2.19.14. Executing OPT_SHARE pass.
+
+2.19.15. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.19.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \day1_opt_a..
+
+2.19.17. Executing OPT_EXPR pass (perform const folding).
+Optimizing module day1_opt_a.
+
+2.19.18. Finished fast OPT passes. (There is nothing left to do.)
+
+2.20. Executing TECHMAP pass (map to technology primitives).
+
+2.20.1. Executing Verilog-2005 frontend: /opt/homebrew/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/opt/homebrew/bin/../share/yosys/techmap.v' to AST representation.
+verilog frontend filename /opt/homebrew/bin/../share/yosys/techmap.v
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Generating RTLIL representation for module `\$connect'.
+Generating RTLIL representation for module `\$input_port'.
+Successfully finished Verilog frontend.
+
+2.20.2. Continuing TECHMAP pass.
+Using template $paramod$a1bc51c02ce12ac21eb18988e83292af48ed7d72\_90_alu for cells of type $alu.
+Using template $paramod$c2b0b22b0ba1d4b6d875278d21394e9100a45884\_90_alu for cells of type $alu.
+Using template $paramod$466c1ff2c677f9c08ccf46d9467344bbd175f515\_90_alu for cells of type $alu.
+Using template $paramod$1e8c376286295ea5767a0416bc3548f868074797\_90_alu for cells of type $alu.
+Using template $paramod$6a42b6fefed750f8a1c58eab59479d960557103c\_90_alu for cells of type $alu.
+Using template $paramod$2bd81f420048247ff6903399c560fe0f8bd48ccc\_90_alu for cells of type $alu.
+Using template $paramod$bfd8bd45a9c0c072107dc68434451a8835814ae0\_90_alu for cells of type $alu.
+Using extmapper maccmap for cells of type $macc_v2.
+  add 26'10100011110101110000101001 * { \_86 [17] \_86 [17] \_86 [17] \_86 [17] \_86 [17] \_86 [17] \_86 [17] \_86 [10:0] } (26x18 bits, unsigned)
+  add \_43 [16:0] (17 bits, signed)
+  add 18'010000000000111111 (18 bits, unsigned)
+  add \_91 [43:32] * 5'11001 (12x5 bits, unsigned)
+  add 26'10100011110101110000101001 * \magnitude (26x16 bits, unsigned)
+  add \_20 (10 bits, unsigned)
+  sub { \_84 [9:2] \magnitude [1:0] } (10 bits, unsigned)
+  add 12'000001100100 (12 bits, unsigned)
+  add \_76 [41:32] * 5'11001 (10x5 bits, unsigned)
+  add 26'10100011110101110000101001 * \_100 (26x17 bits, unsigned)
+  add 26'10100011110101110000101001 * \_46 (26x18 bits, unsigned)
+  add 26'10100011110101110000101001 * { \_32 [17:6] \_30 [5:0] } (26x18 bits, unsigned)
+  add \_105 [42:32] * 5'11001 (11x5 bits, unsigned)
+Using extmapper simplemap for cells of type $sdffe.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $logic_not.
+Using extmapper simplemap for cells of type $and.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000001000 for cells of type $fa.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000101100 for cells of type $fa.
+Using template $paramod$ed2a0424f59c17e2727a10b34d08cad64b7729ea\_90_alu for cells of type $alu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000101011 for cells of type $fa.
+Using template $paramod$52434018ec8a02e79051cb559e8516c70bddda5e\_90_alu for cells of type $alu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000001100 for cells of type $fa.
+Using template $paramod$ee3d784672cdb1cb32d9a801a3af776716f16b74\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $not.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000101010 for cells of type $fa.
+Using template $paramod$7ad0a2715cbe7438acc372ec84186a7c022b6ee1\_90_alu for cells of type $alu.
+Using template $paramod$12350b8c8422a70d10b7db4eaae1202a7148b784\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $xor.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000001000 for cells of type $lcu.
+Using extmapper simplemap for cells of type $pos.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000010001 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000010001 for cells of type $lcu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000001101 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000001101 for cells of type $lcu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000001011 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000001011 for cells of type $lcu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000100000 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000100000 for cells of type $lcu.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000001100 for cells of type $lcu.
+Using extmapper simplemap for cells of type $or.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000101100 for cells of type $lcu.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000101011 for cells of type $lcu.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000101010 for cells of type $lcu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000010010 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000010010 for cells of type $lcu.
+No more expansions possible.
+<suppressed ~4401 debug messages>
+
+2.21. Executing OPT pass (performing simple optimizations).
+
+2.21.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module day1_opt_a.
+<suppressed ~18518 debug messages>
+
+2.21.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\day1_opt_a'.
+<suppressed ~2400 debug messages>
+Removed a total of 800 cells.
+
+2.21.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.21.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \day1_opt_a..
+Removed 807 unused cells and 2441 unused wires.
+<suppressed ~808 debug messages>
+
+2.21.5. Finished fast OPT passes.
+
+2.22. Executing ABC pass (technology mapping using ABC).
+
+2.22.1. Extracting gate netlist of module `\day1_opt_a' to `<abc-temp-dir>/input.blif'..
+
+2.22.1.1. Executed ABC.
+Extracted 6249 gates and 6341 wires to a netlist network with 91 inputs and 74 outputs.
+Running ABC script: <abc-temp-dir>/abc.script
+ABC: 
+ABC: ======== ABC command line "source <abc-temp-dir>/abc.script"
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library /var/folders/p8/zvw_h9yx0rjb1g7xhctdry9m0000gn/T/yosys-abc-bEtq9i/stdcells.genlib 
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+2.22.1.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:       81
+ABC RESULTS:            ANDNOT cells:     2164
+ABC RESULTS:               MUX cells:       34
+ABC RESULTS:              NAND cells:       99
+ABC RESULTS:               NOR cells:      454
+ABC RESULTS:               NOT cells:      363
+ABC RESULTS:                OR cells:      598
+ABC RESULTS:             ORNOT cells:      343
+ABC RESULTS:              XNOR cells:      667
+ABC RESULTS:               XOR cells:     1576
+ABC RESULTS:        internal signals:     6176
+ABC RESULTS:           input signals:       91
+ABC RESULTS:          output signals:       74
+Removing temp directory.
+Removing global temp directory.
+
+2.23. Executing OPT pass (performing simple optimizations).
+
+2.23.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module day1_opt_a.
+<suppressed ~12 debug messages>
+
+2.23.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\day1_opt_a'.
+<suppressed ~324 debug messages>
+Removed a total of 108 cells.
+
+2.23.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.23.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \day1_opt_a..
+Removed 0 unused cells and 1487 unused wires.
+<suppressed ~10 debug messages>
+
+2.23.5. Finished fast OPT passes.
+
+2.24. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `day1_opt_a'. Setting top module to day1_opt_a.
+
+2.24.1. Analyzing design hierarchy..
+Top module:  \day1_opt_a
+
+2.24.2. Analyzing design hierarchy..
+Top module:  \day1_opt_a
+Removed 0 unused modules.
+
+2.25. Printing statistics.
+
+=== day1_opt_a ===
+
+        +----------Local Count, excluding submodules.
+        | 
+     6279 wires
+     8810 wire bits
+       82 public wires
+     2613 public wire bits
+        8 ports
+       94 port bits
+     6345 cells
+     2146   $_ANDNOT_
+       81   $_AND_
+       34   $_MUX_
+       94   $_NAND_
+      433   $_NOR_
+      362   $_NOT_
+      326   $_ORNOT_
+      562   $_OR_
+       71   $_SDFFE_PP0P_
+        3   $_SDFFE_PP1P_
+      663   $_XNOR_
+     1570   $_XOR_
+
+2.26. Executing CHECK pass (checking for obvious problems).
+Checking module day1_opt_a...
+Found and reported 0 problems.
+{
+   "creator": "Yosys 0.60 (git sha1 5bafeb77dc71e054fa331ab9efa613e6fb0a1c49, clang++ 17.0.0 -fPIC -O3)",
+   "invocation": "stat -tech cmos -json ",
+   "modules": {
+      "\\day1_opt_a": {
+         "num_wires":         6279,
+         "num_wire_bits":     8810,
+         "num_pub_wires":     82,
+         "num_pub_wire_bits": 2613,
+         "num_ports":         8,
+         "num_port_bits":     94,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         6345,
+         "num_submodules":       0,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 2146,
+            "$_AND_": 81,
+            "$_MUX_": 34,
+            "$_NAND_": 94,
+            "$_NOR_": 433,
+            "$_NOT_": 362,
+            "$_ORNOT_": 326,
+            "$_OR_": 562,
+            "$_SDFFE_PP0P_": 71,
+            "$_SDFFE_PP1P_": 3,
+            "$_XNOR_": 663,
+            "$_XOR_": 1570
+         },
+         "estimated_num_transistors": "48726+"
+      }
+   },
+      "design": {
+         "num_wires":         6279,
+         "num_wire_bits":     8810,
+         "num_pub_wires":     82,
+         "num_pub_wire_bits": 2613,
+         "num_ports":         8,
+         "num_port_bits":     94,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         6345,
+         "num_submodules":       0,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 2146,
+            "$_AND_": 81,
+            "$_MUX_": 34,
+            "$_NAND_": 94,
+            "$_NOR_": 433,
+            "$_NOT_": 362,
+            "$_ORNOT_": 326,
+            "$_OR_": 562,
+            "$_SDFFE_PP0P_": 71,
+            "$_SDFFE_PP1P_": 3,
+            "$_XNOR_": 663,
+            "$_XOR_": 1570
+         },
+         "estimated_num_transistors": "48726+"
+      }
+}
+
+End of script. Logfile hash: da9edafc35, CPU: user 0.98s system 0.03s, MEM: 92.88 MB peak
+Yosys 0.60 (git sha1 5bafeb77dc71e054fa331ab9efa613e6fb0a1c49, clang++ 17.0.0 -fPIC -O3)
+Time spent: 44% 1x abc (0 sec), 15% 36x opt_expr (0 sec), ...

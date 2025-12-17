@@ -1,0 +1,7 @@
+# This file is used internally by FFMPEG.
+file 'file:/Users/tatestaples/Code/AdventOfCode2025/animations/media/videos/day4/720p30/partial_movie_files/Day4Circuit/1987512680_3185474141_223132457.mp4'
+file 'file:/Users/tatestaples/Code/AdventOfCode2025/animations/media/videos/day4/720p30/partial_movie_files/Day4Circuit/2538612922_2394555720_1865360095.mp4'
+file 'file:/Users/tatestaples/Code/AdventOfCode2025/animations/media/videos/day4/720p30/partial_movie_files/Day4Circuit/2538612922_2451686687_2729619625.mp4'
+file 'file:/Users/tatestaples/Code/AdventOfCode2025/animations/media/videos/day4/720p30/partial_movie_files/Day4Circuit/2538612922_3855235616_3658033620.mp4'
+file 'file:/Users/tatestaples/Code/AdventOfCode2025/animations/media/videos/day4/720p30/partial_movie_files/Day4Circuit/2538612922_385903146_3175080799.mp4'
+file 'file:/Users/tatestaples/Code/AdventOfCode2025/animations/media/videos/day4/720p30/partial_movie_files/Day4Circuit/2538612922_2688965532_1015534556.mp4'

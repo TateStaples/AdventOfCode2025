@@ -1,55 +1,37 @@
-const DIAL_SIZE: i32 = 100;
+//! # Secret Entrance
+//!
+//! Part two left turns are easier if we first "reverse" the dial, then treat it as a right turn.
+use crate::util::parse::*;
 
-pub fn part1() {
-    let input = include_str!("../inputs/1-1.txt");
-    let lines = input.lines().collect::<Vec<&str>>();
-    let password = count_0s(lines);
-    println!("Number of 0s lock seq: {}", password);
-}
+type Input = (i32, i32);
 
-fn count_0s(input: Vec<&str>) -> usize {
-    input.into_iter().map(|s| {
-        let dir: i32 = match s.chars().next() {
-            Some('R') => 1,
-            Some('L') => -1,
-            None => panic!("Empty string"),
-            _ => panic!("Invalid character"),
-        };
-        dir * s[1..].parse::<i32>().expect("Invalid number in back of string")
-    }).fold((0, 50), |(mut count, mut pos), step| {
-        pos += step;
-        count += if pos % DIAL_SIZE == 0 { 1 } else { 0 };
-        // println!("Step: {}, New Pos: {}, Count: {}", step, pos, count);
-        (count, pos)
-    }).0 as usize
-}
+pub fn parse(input: &str) -> Input {
+    let directions = input.bytes().filter(|&b| b.is_ascii_uppercase());
+    let amounts = input.iter_signed::<i32>();
 
-pub fn part2() {
-    let input = include_str!("../inputs/1-2.txt");
-    let lines = input.lines().collect::<Vec<&str>>();
-    let password = advanced_feature(lines);
-    println!("Advanced feature count: {}", password);
-}
+    let mut dial = 50;
+    let mut part_one = 0;
+    let mut part_two = 0;
 
-pub fn advanced_feature(input: Vec<&str>) -> usize {
-    input.into_iter().map(|s| {
-        let dir: i32 = match s.chars().next() {
-            Some('R') => 1,
-            Some('L') => -1,
-            None => panic!("Empty string"),
-            _ => panic!("Invalid character"),
-        };
-        dir * s[1..].parse::<i32>().expect("Invalid number in back of string")
-    }).fold((0, 0, 50), |(mut count, mut domain, mut pos), step| {
-        let clicks = step / DIAL_SIZE;
-        pos += step % DIAL_SIZE;
-        let new_domain = pos / DIAL_SIZE;  // Doesn't work for landing exactly on boundary
-        count += if new_domain != domain {
-            (new_domain - domain).abs() as usize + pos
+    for (direction, amount) in directions.zip(amounts) {
+        if direction == b'R' {
+            part_two += (dial + amount) / 100;
+            dial = (dial + amount) % 100;
         } else {
-            0
-        };
-        // println!("Step: {}, New Pos: {}, Count: {}", step, pos, count);
-        (count, domain, pos)
-    }).0 as usize
+            let reversed = (100 - dial) % 100;
+            part_two += (reversed + amount) / 100;
+            dial = (dial - amount).rem_euclid(100);
+        }
+        part_one += i32::from(dial == 0);
+    }
+
+    (part_one, part_two)
+}
+
+pub fn part1(input: &Input) -> i32 {
+    input.0
+}
+
+pub fn part2(input: &Input) -> i32 {
+    input.1
 }

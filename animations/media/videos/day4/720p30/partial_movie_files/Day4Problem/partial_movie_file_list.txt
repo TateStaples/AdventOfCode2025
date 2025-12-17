@@ -1,0 +1,9 @@
+# This file is used internally by FFMPEG.
+file 'file:/Users/tatestaples/Code/AdventOfCode2025/animations/media/videos/day4/720p30/partial_movie_files/Day4Problem/1987512680_3325920190_223132457.mp4'
+file 'file:/Users/tatestaples/Code/AdventOfCode2025/animations/media/videos/day4/720p30/partial_movie_files/Day4Problem/2538612922_2584670032_4102123584.mp4'
+file 'file:/Users/tatestaples/Code/AdventOfCode2025/animations/media/videos/day4/720p30/partial_movie_files/Day4Problem/2538612922_552412307_3460826552.mp4'
+file 'file:/Users/tatestaples/Code/AdventOfCode2025/animations/media/videos/day4/720p30/partial_movie_files/Day4Problem/2538612922_3730231783_1190434764.mp4'
+file 'file:/Users/tatestaples/Code/AdventOfCode2025/animations/media/videos/day4/720p30/partial_movie_files/Day4Problem/2538612922_3595807641_3909493841.mp4'
+file 'file:/Users/tatestaples/Code/AdventOfCode2025/animations/media/videos/day4/720p30/partial_movie_files/Day4Problem/2538612922_3731885026_3073079255.mp4'
+file 'file:/Users/tatestaples/Code/AdventOfCode2025/animations/media/videos/day4/720p30/partial_movie_files/Day4Problem/2538612922_44165080_1800747732.mp4'
+file 'file:/Users/tatestaples/Code/AdventOfCode2025/animations/media/videos/day4/720p30/partial_movie_files/Day4Problem/2538612922_2688965532_1100808282.mp4'

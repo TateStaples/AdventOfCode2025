@@ -1,0 +1,521 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2025  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.60 (git sha1 5bafeb77dc71e054fa331ab9efa613e6fb0a1c49, clang++ 17.0.0 -fPIC -O3)
+
+-- Running command `read_verilog -sv build/day3.v; hierarchy -top day3; proc; opt -fast; memory; opt -fast; techmap; opt -fast; stat -json' --
+
+1. Executing Verilog-2005 frontend: build/day3.v
+Parsing SystemVerilog input from `build/day3.v' to AST representation.
+verilog frontend filename build/day3.v
+Generating RTLIL representation for module `\day3'.
+Successfully finished Verilog frontend.
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1. Analyzing design hierarchy..
+Top module:  \day3
+
+2.2. Analyzing design hierarchy..
+Top module:  \day3
+Removed 0 unused modules.
+
+3. Executing PROC pass (convert processes to netlists).
+
+3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$build/day3.v:4377$244 in module day3.
+Marked 1 switch rules as full_case in process $proc$build/day3.v:4366$239 in module day3.
+Marked 1 switch rules as full_case in process $proc$build/day3.v:4347$230 in module day3.
+Marked 1 switch rules as full_case in process $proc$build/day3.v:4302$202 in module day3.
+Marked 1 switch rules as full_case in process $proc$build/day3.v:4037$197 in module day3.
+Marked 1 switch rules as full_case in process $proc$build/day3.v:3643$191 in module day3.
+Marked 1 switch rules as full_case in process $proc$build/day3.v:3632$188 in module day3.
+Marked 1 switch rules as full_case in process $proc$build/day3.v:3367$183 in module day3.
+Marked 1 switch rules as full_case in process $proc$build/day3.v:3345$171 in module day3.
+Marked 1 switch rules as full_case in process $proc$build/day3.v:3080$166 in module day3.
+Marked 1 switch rules as full_case in process $proc$build/day3.v:3058$154 in module day3.
+Marked 1 switch rules as full_case in process $proc$build/day3.v:2793$149 in module day3.
+Marked 1 switch rules as full_case in process $proc$build/day3.v:2771$137 in module day3.
+Marked 1 switch rules as full_case in process $proc$build/day3.v:2506$132 in module day3.
+Marked 1 switch rules as full_case in process $proc$build/day3.v:2484$120 in module day3.
+Marked 1 switch rules as full_case in process $proc$build/day3.v:2219$115 in module day3.
+Marked 1 switch rules as full_case in process $proc$build/day3.v:2197$103 in module day3.
+Marked 1 switch rules as full_case in process $proc$build/day3.v:1932$98 in module day3.
+Marked 1 switch rules as full_case in process $proc$build/day3.v:1910$86 in module day3.
+Marked 1 switch rules as full_case in process $proc$build/day3.v:1645$81 in module day3.
+Marked 1 switch rules as full_case in process $proc$build/day3.v:1623$69 in module day3.
+Marked 1 switch rules as full_case in process $proc$build/day3.v:1358$64 in module day3.
+Marked 1 switch rules as full_case in process $proc$build/day3.v:1336$52 in module day3.
+Marked 1 switch rules as full_case in process $proc$build/day3.v:1071$47 in module day3.
+Marked 1 switch rules as full_case in process $proc$build/day3.v:1049$35 in module day3.
+Marked 1 switch rules as full_case in process $proc$build/day3.v:784$30 in module day3.
+Marked 1 switch rules as full_case in process $proc$build/day3.v:760$18 in module day3.
+Marked 1 switch rules as full_case in process $proc$build/day3.v:495$13 in module day3.
+Marked 1 switch rules as full_case in process $proc$build/day3.v:477$3 in module day3.
+Removed a total of 0 dead cases.
+
+3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 29 redundant assignments.
+Promoted 0 assignments to connections.
+
+3.4. Executing PROC_INIT pass (extract init attributes).
+
+3.5. Executing PROC_ARST pass (detect async resets in processes).
+
+3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~29 debug messages>
+
+3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\day3.$proc$build/day3.v:4377$244'.
+     1/1: $0\_194[3:0]
+Creating decoders for process `\day3.$proc$build/day3.v:4366$239'.
+     1/1: $0\_34[1:0]
+Creating decoders for process `\day3.$proc$build/day3.v:4347$230'.
+     1/1: $0\_229[7:0]
+Creating decoders for process `\day3.$proc$build/day3.v:4302$202'.
+     1/1: $0\_233[3:0]
+Creating decoders for process `\day3.$proc$build/day3.v:4037$197'.
+     1/1: $0\_440[3:0]
+Creating decoders for process `\day3.$proc$build/day3.v:3643$191'.
+     1/1: $0\_230[3:0]
+Creating decoders for process `\day3.$proc$build/day3.v:3632$188'.
+     1/1: $0\_242[3:0]
+Creating decoders for process `\day3.$proc$build/day3.v:3367$183'.
+     1/1: $0\_432[3:0]
+Creating decoders for process `\day3.$proc$build/day3.v:3345$171'.
+     1/1: $0\_251[3:0]
+Creating decoders for process `\day3.$proc$build/day3.v:3080$166'.
+     1/1: $0\_422[3:0]
+Creating decoders for process `\day3.$proc$build/day3.v:3058$154'.
+     1/1: $0\_260[3:0]
+Creating decoders for process `\day3.$proc$build/day3.v:2793$149'.
+     1/1: $0\_412[3:0]
+Creating decoders for process `\day3.$proc$build/day3.v:2771$137'.
+     1/1: $0\_269[3:0]
+Creating decoders for process `\day3.$proc$build/day3.v:2506$132'.
+     1/1: $0\_402[3:0]
+Creating decoders for process `\day3.$proc$build/day3.v:2484$120'.
+     1/1: $0\_278[3:0]
+Creating decoders for process `\day3.$proc$build/day3.v:2219$115'.
+     1/1: $0\_392[3:0]
+Creating decoders for process `\day3.$proc$build/day3.v:2197$103'.
+     1/1: $0\_287[3:0]
+Creating decoders for process `\day3.$proc$build/day3.v:1932$98'.
+     1/1: $0\_382[3:0]
+Creating decoders for process `\day3.$proc$build/day3.v:1910$86'.
+     1/1: $0\_296[3:0]
+Creating decoders for process `\day3.$proc$build/day3.v:1645$81'.
+     1/1: $0\_372[3:0]
+Creating decoders for process `\day3.$proc$build/day3.v:1623$69'.
+     1/1: $0\_305[3:0]
+Creating decoders for process `\day3.$proc$build/day3.v:1358$64'.
+     1/1: $0\_362[3:0]
+Creating decoders for process `\day3.$proc$build/day3.v:1336$52'.
+     1/1: $0\_314[3:0]
+Creating decoders for process `\day3.$proc$build/day3.v:1071$47'.
+     1/1: $0\_352[3:0]
+Creating decoders for process `\day3.$proc$build/day3.v:1049$35'.
+     1/1: $0\_323[3:0]
+Creating decoders for process `\day3.$proc$build/day3.v:784$30'.
+     1/1: $0\_342[3:0]
+Creating decoders for process `\day3.$proc$build/day3.v:760$18'.
+     1/1: $0\_51[3:0]
+Creating decoders for process `\day3.$proc$build/day3.v:495$13'.
+     1/1: $0\_188[3:0]
+Creating decoders for process `\day3.$proc$build/day3.v:477$3'.
+     1/1: $0\_43[0:0]
+
+3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\day3.\_440' from process `\day3.$proc$build/day3.v:4037$197'.
+No latch inferred for signal `\day3.\_230' from process `\day3.$proc$build/day3.v:3643$191'.
+No latch inferred for signal `\day3.\_432' from process `\day3.$proc$build/day3.v:3367$183'.
+No latch inferred for signal `\day3.\_422' from process `\day3.$proc$build/day3.v:3080$166'.
+No latch inferred for signal `\day3.\_412' from process `\day3.$proc$build/day3.v:2793$149'.
+No latch inferred for signal `\day3.\_402' from process `\day3.$proc$build/day3.v:2506$132'.
+No latch inferred for signal `\day3.\_392' from process `\day3.$proc$build/day3.v:2219$115'.
+No latch inferred for signal `\day3.\_382' from process `\day3.$proc$build/day3.v:1932$98'.
+No latch inferred for signal `\day3.\_372' from process `\day3.$proc$build/day3.v:1645$81'.
+No latch inferred for signal `\day3.\_362' from process `\day3.$proc$build/day3.v:1358$64'.
+No latch inferred for signal `\day3.\_352' from process `\day3.$proc$build/day3.v:1071$47'.
+No latch inferred for signal `\day3.\_342' from process `\day3.$proc$build/day3.v:784$30'.
+No latch inferred for signal `\day3.\_188' from process `\day3.$proc$build/day3.v:495$13'.
+
+3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\day3.\_194' using process `\day3.$proc$build/day3.v:4377$244'.
+  created $dff cell `$procdff$1972' with positive edge clock.
+Creating register for signal `\day3.\_34' using process `\day3.$proc$build/day3.v:4366$239'.
+  created $dff cell `$procdff$1973' with positive edge clock.
+Creating register for signal `\day3.\_229' using process `\day3.$proc$build/day3.v:4347$230'.
+  created $dff cell `$procdff$1974' with positive edge clock.
+Creating register for signal `\day3.\_233' using process `\day3.$proc$build/day3.v:4302$202'.
+  created $dff cell `$procdff$1975' with positive edge clock.
+Creating register for signal `\day3.\_242' using process `\day3.$proc$build/day3.v:3632$188'.
+  created $dff cell `$procdff$1976' with positive edge clock.
+Creating register for signal `\day3.\_251' using process `\day3.$proc$build/day3.v:3345$171'.
+  created $dff cell `$procdff$1977' with positive edge clock.
+Creating register for signal `\day3.\_260' using process `\day3.$proc$build/day3.v:3058$154'.
+  created $dff cell `$procdff$1978' with positive edge clock.
+Creating register for signal `\day3.\_269' using process `\day3.$proc$build/day3.v:2771$137'.
+  created $dff cell `$procdff$1979' with positive edge clock.
+Creating register for signal `\day3.\_278' using process `\day3.$proc$build/day3.v:2484$120'.
+  created $dff cell `$procdff$1980' with positive edge clock.
+Creating register for signal `\day3.\_287' using process `\day3.$proc$build/day3.v:2197$103'.
+  created $dff cell `$procdff$1981' with positive edge clock.
+Creating register for signal `\day3.\_296' using process `\day3.$proc$build/day3.v:1910$86'.
+  created $dff cell `$procdff$1982' with positive edge clock.
+Creating register for signal `\day3.\_305' using process `\day3.$proc$build/day3.v:1623$69'.
+  created $dff cell `$procdff$1983' with positive edge clock.
+Creating register for signal `\day3.\_314' using process `\day3.$proc$build/day3.v:1336$52'.
+  created $dff cell `$procdff$1984' with positive edge clock.
+Creating register for signal `\day3.\_323' using process `\day3.$proc$build/day3.v:1049$35'.
+  created $dff cell `$procdff$1985' with positive edge clock.
+Creating register for signal `\day3.\_51' using process `\day3.$proc$build/day3.v:760$18'.
+  created $dff cell `$procdff$1986' with positive edge clock.
+Creating register for signal `\day3.\_43' using process `\day3.$proc$build/day3.v:477$3'.
+  created $dff cell `$procdff$1987' with positive edge clock.
+
+3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\day3.$proc$build/day3.v:4377$244'.
+Removing empty process `day3.$proc$build/day3.v:4377$244'.
+Found and cleaned up 1 empty switch in `\day3.$proc$build/day3.v:4366$239'.
+Removing empty process `day3.$proc$build/day3.v:4366$239'.
+Found and cleaned up 1 empty switch in `\day3.$proc$build/day3.v:4347$230'.
+Removing empty process `day3.$proc$build/day3.v:4347$230'.
+Found and cleaned up 1 empty switch in `\day3.$proc$build/day3.v:4302$202'.
+Removing empty process `day3.$proc$build/day3.v:4302$202'.
+Found and cleaned up 1 empty switch in `\day3.$proc$build/day3.v:4037$197'.
+Removing empty process `day3.$proc$build/day3.v:4037$197'.
+Found and cleaned up 1 empty switch in `\day3.$proc$build/day3.v:3643$191'.
+Removing empty process `day3.$proc$build/day3.v:3643$191'.
+Found and cleaned up 1 empty switch in `\day3.$proc$build/day3.v:3632$188'.
+Removing empty process `day3.$proc$build/day3.v:3632$188'.
+Found and cleaned up 1 empty switch in `\day3.$proc$build/day3.v:3367$183'.
+Removing empty process `day3.$proc$build/day3.v:3367$183'.
+Found and cleaned up 1 empty switch in `\day3.$proc$build/day3.v:3345$171'.
+Removing empty process `day3.$proc$build/day3.v:3345$171'.
+Found and cleaned up 1 empty switch in `\day3.$proc$build/day3.v:3080$166'.
+Removing empty process `day3.$proc$build/day3.v:3080$166'.
+Found and cleaned up 1 empty switch in `\day3.$proc$build/day3.v:3058$154'.
+Removing empty process `day3.$proc$build/day3.v:3058$154'.
+Found and cleaned up 1 empty switch in `\day3.$proc$build/day3.v:2793$149'.
+Removing empty process `day3.$proc$build/day3.v:2793$149'.
+Found and cleaned up 1 empty switch in `\day3.$proc$build/day3.v:2771$137'.
+Removing empty process `day3.$proc$build/day3.v:2771$137'.
+Found and cleaned up 1 empty switch in `\day3.$proc$build/day3.v:2506$132'.
+Removing empty process `day3.$proc$build/day3.v:2506$132'.
+Found and cleaned up 1 empty switch in `\day3.$proc$build/day3.v:2484$120'.
+Removing empty process `day3.$proc$build/day3.v:2484$120'.
+Found and cleaned up 1 empty switch in `\day3.$proc$build/day3.v:2219$115'.
+Removing empty process `day3.$proc$build/day3.v:2219$115'.
+Found and cleaned up 1 empty switch in `\day3.$proc$build/day3.v:2197$103'.
+Removing empty process `day3.$proc$build/day3.v:2197$103'.
+Found and cleaned up 1 empty switch in `\day3.$proc$build/day3.v:1932$98'.
+Removing empty process `day3.$proc$build/day3.v:1932$98'.
+Found and cleaned up 1 empty switch in `\day3.$proc$build/day3.v:1910$86'.
+Removing empty process `day3.$proc$build/day3.v:1910$86'.
+Found and cleaned up 1 empty switch in `\day3.$proc$build/day3.v:1645$81'.
+Removing empty process `day3.$proc$build/day3.v:1645$81'.
+Found and cleaned up 1 empty switch in `\day3.$proc$build/day3.v:1623$69'.
+Removing empty process `day3.$proc$build/day3.v:1623$69'.
+Found and cleaned up 1 empty switch in `\day3.$proc$build/day3.v:1358$64'.
+Removing empty process `day3.$proc$build/day3.v:1358$64'.
+Found and cleaned up 1 empty switch in `\day3.$proc$build/day3.v:1336$52'.
+Removing empty process `day3.$proc$build/day3.v:1336$52'.
+Found and cleaned up 1 empty switch in `\day3.$proc$build/day3.v:1071$47'.
+Removing empty process `day3.$proc$build/day3.v:1071$47'.
+Found and cleaned up 1 empty switch in `\day3.$proc$build/day3.v:1049$35'.
+Removing empty process `day3.$proc$build/day3.v:1049$35'.
+Found and cleaned up 1 empty switch in `\day3.$proc$build/day3.v:784$30'.
+Removing empty process `day3.$proc$build/day3.v:784$30'.
+Found and cleaned up 1 empty switch in `\day3.$proc$build/day3.v:760$18'.
+Removing empty process `day3.$proc$build/day3.v:760$18'.
+Found and cleaned up 1 empty switch in `\day3.$proc$build/day3.v:495$13'.
+Removing empty process `day3.$proc$build/day3.v:495$13'.
+Found and cleaned up 1 empty switch in `\day3.$proc$build/day3.v:477$3'.
+Removing empty process `day3.$proc$build/day3.v:477$3'.
+Cleaned up 29 empty switches.
+
+3.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module day3.
+<suppressed ~16 debug messages>
+
+4. Executing OPT pass (performing simple optimizations).
+
+4.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module day3.
+<suppressed ~11 debug messages>
+
+4.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\day3'.
+<suppressed ~42 debug messages>
+Removed a total of 14 cells.
+
+4.3. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $procdff$1974 ($dff) from module day3 (D = $ternary$build/day3.v:4345$229_Y, Q = \_229, rval = 8'00000000).
+Adding EN signal on $auto$ff.cc:337:slice$1988 ($sdff) from module day3 (D = $ternary$build/day3.v:4345$229_Y, Q = \_229).
+Adding SRST signal on $procdff$1975 ($dff) from module day3 (D = $ternary$build/day3.v:4300$201_Y, Q = \_233, rval = 4'0000).
+Adding EN signal on $auto$ff.cc:337:slice$1992 ($sdff) from module day3 (D = $ternary$build/day3.v:4300$201_Y, Q = \_233).
+Adding SRST signal on $procdff$1976 ($dff) from module day3 (D = $ternary$build/day3.v:3630$187_Y, Q = \_242, rval = 4'0000).
+Adding EN signal on $auto$ff.cc:337:slice$2000 ($sdff) from module day3 (D = $ternary$build/day3.v:3630$187_Y, Q = \_242).
+Adding SRST signal on $procdff$1977 ($dff) from module day3 (D = $ternary$build/day3.v:3343$170_Y, Q = \_251, rval = 4'0000).
+Adding EN signal on $auto$ff.cc:337:slice$2008 ($sdff) from module day3 (D = $ternary$build/day3.v:3343$170_Y, Q = \_251).
+Adding SRST signal on $procdff$1978 ($dff) from module day3 (D = $ternary$build/day3.v:3056$153_Y, Q = \_260, rval = 4'0000).
+Adding EN signal on $auto$ff.cc:337:slice$2016 ($sdff) from module day3 (D = $ternary$build/day3.v:3056$153_Y, Q = \_260).
+Adding SRST signal on $procdff$1979 ($dff) from module day3 (D = $ternary$build/day3.v:2769$136_Y, Q = \_269, rval = 4'0000).
+Adding EN signal on $auto$ff.cc:337:slice$2024 ($sdff) from module day3 (D = $ternary$build/day3.v:2769$136_Y, Q = \_269).
+Adding SRST signal on $procdff$1980 ($dff) from module day3 (D = $ternary$build/day3.v:2482$119_Y, Q = \_278, rval = 4'0000).
+Adding EN signal on $auto$ff.cc:337:slice$2032 ($sdff) from module day3 (D = $ternary$build/day3.v:2482$119_Y, Q = \_278).
+Adding SRST signal on $procdff$1981 ($dff) from module day3 (D = $ternary$build/day3.v:2195$102_Y, Q = \_287, rval = 4'0000).
+Adding EN signal on $auto$ff.cc:337:slice$2040 ($sdff) from module day3 (D = $ternary$build/day3.v:2195$102_Y, Q = \_287).
+Adding SRST signal on $procdff$1982 ($dff) from module day3 (D = $ternary$build/day3.v:1908$85_Y, Q = \_296, rval = 4'0000).
+Adding EN signal on $auto$ff.cc:337:slice$2048 ($sdff) from module day3 (D = $ternary$build/day3.v:1908$85_Y, Q = \_296).
+Adding SRST signal on $procdff$1983 ($dff) from module day3 (D = $ternary$build/day3.v:1621$68_Y, Q = \_305, rval = 4'0000).
+Adding EN signal on $auto$ff.cc:337:slice$2056 ($sdff) from module day3 (D = $ternary$build/day3.v:1621$68_Y, Q = \_305).
+Adding SRST signal on $procdff$1984 ($dff) from module day3 (D = $ternary$build/day3.v:1334$51_Y, Q = \_314, rval = 4'0000).
+Adding EN signal on $auto$ff.cc:337:slice$2064 ($sdff) from module day3 (D = $ternary$build/day3.v:1334$51_Y, Q = \_314).
+Adding SRST signal on $procdff$1985 ($dff) from module day3 (D = $ternary$build/day3.v:1047$34_Y, Q = \_323, rval = 4'0000).
+Adding EN signal on $auto$ff.cc:337:slice$2072 ($sdff) from module day3 (D = $ternary$build/day3.v:1047$34_Y, Q = \_323).
+Adding SRST signal on $procdff$1986 ($dff) from module day3 (D = $ternary$build/day3.v:758$17_Y, Q = \_51, rval = 4'0000).
+Adding EN signal on $auto$ff.cc:337:slice$2080 ($sdff) from module day3 (D = $ternary$build/day3.v:758$17_Y, Q = \_51).
+Adding SRST signal on $procdff$1987 ($dff) from module day3 (D = $ternary$build/day3.v:475$2_Y, Q = \_43, rval = 1'0).
+Adding EN signal on $auto$ff.cc:337:slice$2088 ($sdff) from module day3 (D = $ternary$build/day3.v:475$2_Y, Q = \_43).
+Adding SRST signal on $procdff$1972 ($dff) from module day3 (D = $ternary$build/day3.v:4375$243_Y, Q = \_194, rval = 4'0000).
+Adding EN signal on $auto$ff.cc:337:slice$2092 ($sdff) from module day3 (D = \_25, Q = \_194).
+Adding SRST signal on $procdff$1973 ($dff) from module day3 (D = $ternary$build/day3.v:4364$238_Y, Q = \_34, rval = 2'00).
+Adding EN signal on $auto$ff.cc:337:slice$2094 ($sdff) from module day3 (D = $ternary$build/day3.v:4364$238_Y, Q = \_34).
+
+4.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \day3..
+Removed 17 unused cells and 295 unused wires.
+<suppressed ~20 debug messages>
+
+4.5. Rerunning OPT passes. (Removed registers in this run.)
+
+4.6. Executing OPT_EXPR pass (perform const folding).
+Optimizing module day3.
+<suppressed ~15 debug messages>
+
+4.7. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\day3'.
+<suppressed ~39 debug messages>
+Removed a total of 13 cells.
+
+4.8. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \day3..
+Removed 0 unused cells and 13 unused wires.
+<suppressed ~1 debug messages>
+
+4.10. Finished fast OPT passes.
+
+5. Executing MEMORY pass.
+
+5.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+5.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+5.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+5.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+5.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+5.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \day3..
+
+5.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+5.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+5.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \day3..
+
+5.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+5.11. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+6. Executing OPT pass (performing simple optimizations).
+
+6.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module day3.
+
+6.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\day3'.
+Removed a total of 0 cells.
+
+6.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \day3..
+
+6.5. Finished fast OPT passes.
+
+7. Executing TECHMAP pass (map to technology primitives).
+
+7.1. Executing Verilog-2005 frontend: /opt/homebrew/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/opt/homebrew/bin/../share/yosys/techmap.v' to AST representation.
+verilog frontend filename /opt/homebrew/bin/../share/yosys/techmap.v
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Generating RTLIL representation for module `\$connect'.
+Generating RTLIL representation for module `\$input_port'.
+Successfully finished Verilog frontend.
+
+7.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $sdffe.
+Using extmapper simplemap for cells of type $reduce_bool.
+Using extmapper simplemap for cells of type $reduce_and.
+Using extmapper simplemap for cells of type $ne.
+Using extmapper simplemap for cells of type $mux.
+Running "alumacc" on wrapper $extern:wrap:$lt:A_SIGNED=0:A_WIDTH=4:B_SIGNED=0:B_WIDTH=4:Y_WIDTH=1:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$lt:A_SIGNED=0:A_WIDTH=4:B_SIGNED=0:B_WIDTH=4:Y_WIDTH=1:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$lt:A_SIGNED=0:A_WIDTH=4:B_SIGNED=0:B_WIDTH=4:Y_WIDTH=1:394426c56d1a028ba8fdd5469b163e04011def47.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $and.
+Running "alumacc" on wrapper $extern:wrap:$add:A_SIGNED=0:A_WIDTH=8:B_SIGNED=0:B_WIDTH=8:Y_WIDTH=8:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$add:A_SIGNED=0:A_WIDTH=8:B_SIGNED=0:B_WIDTH=8:Y_WIDTH=8:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$add:A_SIGNED=0:A_WIDTH=8:B_SIGNED=0:B_WIDTH=8:Y_WIDTH=8:394426c56d1a028ba8fdd5469b163e04011def47.
+Running "alumacc" on wrapper $extern:wrap:$mul:A_SIGNED=0:A_WIDTH=64:B_SIGNED=0:B_WIDTH=63:Y_WIDTH=127:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$mul:A_SIGNED=0:A_WIDTH=64:B_SIGNED=0:B_WIDTH=63:Y_WIDTH=127:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$mul:A_SIGNED=0:A_WIDTH=64:B_SIGNED=0:B_WIDTH=63:Y_WIDTH=127:394426c56d1a028ba8fdd5469b163e04011def47.
+Running "alumacc" on wrapper $extern:wrap:$add:A_SIGNED=0:A_WIDTH=64:B_SIGNED=0:B_WIDTH=64:Y_WIDTH=64:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$add:A_SIGNED=0:A_WIDTH=64:B_SIGNED=0:B_WIDTH=64:Y_WIDTH=64:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$add:A_SIGNED=0:A_WIDTH=64:B_SIGNED=0:B_WIDTH=64:Y_WIDTH=64:394426c56d1a028ba8fdd5469b163e04011def47.
+Using extmapper simplemap for cells of type $eq.
+Running "alumacc" on wrapper $extern:wrap:$sub:A_SIGNED=0:A_WIDTH=8:B_SIGNED=0:B_WIDTH=8:Y_WIDTH=8:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$sub:A_SIGNED=0:A_WIDTH=8:B_SIGNED=0:B_WIDTH=8:Y_WIDTH=8:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$sub:A_SIGNED=0:A_WIDTH=8:B_SIGNED=0:B_WIDTH=8:Y_WIDTH=8:394426c56d1a028ba8fdd5469b163e04011def47.
+Using extmapper simplemap for cells of type $logic_not.
+Using extmapper simplemap for cells of type $or.
+Using template $paramod$631af69435734d89ab33e91568653fd3102cc032\_90_pmux for cells of type $pmux.
+Using template $paramod$a1bc51c02ce12ac21eb18988e83292af48ed7d72\_90_alu for cells of type $alu.
+Using template $paramod$740b056ede97228d3eae64ea2fdc81f0a33e0fe7\_90_alu for cells of type $alu.
+Using template $paramod$039520c137afc9cd69dd56c3fb11a4e1fbe5f664\_90_alu for cells of type $alu.
+Using extmapper maccmap for cells of type $macc_v2.
+  add \_540 * 63'000000000000000000000000000000000000000000000000000000000000101 (64x63 bits, unsigned)
+  add \_547 * 63'000000000000000000000000000000000000000000000000000000000000101 (64x63 bits, unsigned)
+  add \_554 * 63'000000000000000000000000000000000000000000000000000000000000101 (64x63 bits, unsigned)
+  add \_561 * 63'000000000000000000000000000000000000000000000000000000000000101 (64x63 bits, unsigned)
+  add \_533 * 63'000000000000000000000000000000000000000000000000000000000000101 (64x63 bits, unsigned)
+  add \_526 * 63'000000000000000000000000000000000000000000000000000000000000101 (64x63 bits, unsigned)
+  add \_519 * 63'000000000000000000000000000000000000000000000000000000000000101 (64x63 bits, unsigned)
+  add \_512 * 63'000000000000000000000000000000000000000000000000000000000000101 (64x63 bits, unsigned)
+  add \_505 * 63'000000000000000000000000000000000000000000000000000000000000101 (64x63 bits, unsigned)
+  add \_498 * 63'000000000000000000000000000000000000000000000000000000000000101 (64x63 bits, unsigned)
+  add \_491 * 63'000000000000000000000000000000000000000000000000000000000000101 (64x63 bits, unsigned)
+Using extmapper simplemap for cells of type $reduce_or.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000001111111 for cells of type $fa.
+Using template $paramod$0b29a377be1af764bc7e97f2568af2e7ddaa22d3\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $xor.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000001000 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000001000 for cells of type $lcu.
+Using extmapper simplemap for cells of type $pos.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000000100 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000100 for cells of type $lcu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000001000000 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000001000000 for cells of type $lcu.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000001111111 for cells of type $lcu.
+No more expansions possible.
+<suppressed ~20877 debug messages>
+
+8. Executing OPT pass (performing simple optimizations).
+
+8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module day3.
+<suppressed ~549471 debug messages>
+
+8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\day3'.
+<suppressed ~44256 debug messages>
+Removed a total of 14752 cells.
+
+8.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+8.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \day3..
+Removed 787 unused cells and 35838 unused wires.
+<suppressed ~812 debug messages>
+
+8.5. Finished fast OPT passes.
+{
+   "creator": "Yosys 0.60 (git sha1 5bafeb77dc71e054fa331ab9efa613e6fb0a1c49, clang++ 17.0.0 -fPIC -O3)",
+   "invocation": "stat -json ",
+   "modules": {
+      "\\day3": {
+         "num_wires":         5052,
+         "num_wire_bits":     47862,
+         "num_pub_wires":     434,
+         "num_pub_wire_bits": 6956,
+         "num_ports":         8,
+         "num_port_bits":     592,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         27816,
+         "num_submodules":       0,
+         "num_cells_by_type": {
+            "$_AND_": 10887,
+            "$_MUX_": 793,
+            "$_NOT_": 1795,
+            "$_OR_": 11082,
+            "$_SDFFE_PP0P_": 63,
+            "$_XOR_": 3196
+         }
+      }
+   },
+      "design": {
+         "num_wires":         5052,
+         "num_wire_bits":     47862,
+         "num_pub_wires":     434,
+         "num_pub_wire_bits": 6956,
+         "num_ports":         8,
+         "num_port_bits":     592,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         27816,
+         "num_submodules":       0,
+         "num_cells_by_type": {
+            "$_AND_": 10887,
+            "$_MUX_": 793,
+            "$_NOT_": 1795,
+            "$_OR_": 11082,
+            "$_SDFFE_PP0P_": 63,
+            "$_XOR_": 3196
+         }
+      }
+}
+
+End of script. Logfile hash: d0c66f3b2a, CPU: user 9.45s system 0.51s, MEM: 1201.44 MB peak
+Yosys 0.60 (git sha1 5bafeb77dc71e054fa331ab9efa613e6fb0a1c49, clang++ 17.0.0 -fPIC -O3)
+Time spent: 51% 13x opt_expr (5 sec), 21% 1x techmap (2 sec), ...

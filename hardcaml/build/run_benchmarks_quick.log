@@ -1,0 +1,79 @@
+== Build Hardcaml ==
+== Export Verilog ==
+Skip (exists): build/day1.v
+Skip (exists): build/day1_opt_a.v
+Skip (exists): build/day1_opt_b.v
+Skip (exists): build/day1_opt_c_tree8.v
+Skip (exists): build/day1_opt_d_microcoded.v
+Skip (exists): build/day2.v
+Skip (exists): build/day2_opt_a_sequential.v
+Skip (exists): build/day2_opt_b_multilane.v
+Skip (exists): build/day2_opt_c_family_unroll.v
+Skip (exists): build/day2_opt_a_range_sum_engine.v
+Skip (exists): build/day3.v
+Skip (exists): build/day3_opt_a.v
+Skip (exists): build/day3_opt_b.v
+Skip (exists): build/day3_opt_c.v
+Skip (exists): build/day4.v
+Skip (exists): build/day4_opt_a.v
+Skip (exists): build/day4_opt_b.v
+Skip (exists): build/day4_opt_c.v
+Skip (exists): build/day5.v
+Skip (exists): build/day5_opt_a.v
+Skip (exists): build/day5_opt_b.v
+Skip (exists): build/day5_opt_c.v
+Skip (exists): build/day6.v
+Skip (exists): build/day6_opt_a.v
+Skip (exists): build/day6_opt_b.v
+Skip (exists): build/day6_opt_c.v
+Skip (exists): build/day7.v
+Skip (exists): build/day7_opt_a.v
+Skip (exists): build/day7_opt_b.v
+Skip (exists): build/day8.v
+Skip (exists): build/day8_opt_a.v
+Skip (exists): build/day8_opt_b.v
+Skip (exists): build/day8_opt_c.v
+Skip (exists): build/day9.v
+Skip (exists): build/day9_opt_a.v
+Skip (exists): build/day9_opt_b.v
+Skip (exists): build/day10.v
+Skip (exists): build/day10_opt_a.v
+Skip (exists): build/day11.v
+Skip (exists): build/day11_opt_a.v
+Skip (exists): build/day11_opt_b.v
+Skip (exists): build/day11_opt_c.v
+Skip (exists): build/day12.v
+Skip (exists): build/day12_opt_a.v
+Skip (exists): build/day12_opt_b.v
+Skip (exists): build/day12_opt_c.v
+== Yosys synth + stat ==
+== Yosys: day1 ==
+Skip (exists): build/day1_yosys_stat.json
+== Yosys: day1_opt_a ==
+Skip (exists): build/day1_opt_a_yosys_stat.json
+== Yosys: day1_opt_b ==
+Skip (exists): build/day1_opt_b_yosys_stat.json
+== Yosys: day1_opt_c_tree8 ==
+Skip (exists): build/day1_opt_c_tree8_yosys_stat.json
+== Yosys: day1_opt_d_microcoded ==
+Skip (exists): build/day1_opt_d_microcoded_yosys_stat.json
+== Yosys: day2 ==
+Skip (exists): build/day2_yosys_stat.json
+== Yosys: day2_opt_a_sequential ==
+Skip (exists): build/day2_opt_a_sequential_yosys_stat.json
+== Yosys: day2_opt_b_multilane ==
+Skip (exists): build/day2_opt_b_multilane_yosys_stat.json
+== Yosys: day2_opt_c_family_unroll ==
+Skip (exists): build/day2_opt_c_family_unroll_yosys_stat.json
+== Yosys: day2_opt_a_range_sum_engine ==
+Skip (exists): build/day2_opt_a_range_sum_engine_yosys_stat.json
+== Yosys: day3 ==
+Skip (exists): build/day3_yosys_stat.json
+== Yosys: day3_opt_a ==
+Skip (exists): build/day3_opt_a_yosys_stat.json
+== Yosys: day3_opt_b ==
+Skip (exists): build/day3_opt_b_yosys_stat.json
+== Yosys: day3_opt_c ==
+Skip (exists): build/day3_opt_c_yosys_stat.json
+== Yosys: day4 ==
+Run yosys (fast, timeout=30s): day4

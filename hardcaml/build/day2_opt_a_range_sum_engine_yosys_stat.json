@@ -1,0 +1,380 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2025  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.60 (git sha1 5bafeb77dc71e054fa331ab9efa613e6fb0a1c49, clang++ 17.0.0 -fPIC -O3)
+
+-- Running command `read_verilog -sv build/day2_opt_a_range_sum_engine.v; hierarchy -top day2_opt_a_range_sum_engine; proc; opt -fast; memory; opt -fast; techmap; opt -fast; stat -json' --
+
+1. Executing Verilog-2005 frontend: build/day2_opt_a_range_sum_engine.v
+Parsing SystemVerilog input from `build/day2_opt_a_range_sum_engine.v' to AST representation.
+verilog frontend filename build/day2_opt_a_range_sum_engine.v
+Generating RTLIL representation for module `\day2_opt_a_range_sum_engine'.
+Successfully finished Verilog frontend.
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1. Analyzing design hierarchy..
+Top module:  \day2_opt_a_range_sum_engine
+
+2.2. Analyzing design hierarchy..
+Top module:  \day2_opt_a_range_sum_engine
+Removed 0 unused modules.
+
+3. Executing PROC pass (convert processes to netlists).
+
+3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$build/day2_opt_a_range_sum_engine.v:4342$923 in module day2_opt_a_range_sum_engine.
+Marked 1 switch rules as full_case in process $proc$build/day2_opt_a_range_sum_engine.v:4331$919 in module day2_opt_a_range_sum_engine.
+Marked 1 switch rules as full_case in process $proc$build/day2_opt_a_range_sum_engine.v:4317$912 in module day2_opt_a_range_sum_engine.
+Marked 1 switch rules as full_case in process $proc$build/day2_opt_a_range_sum_engine.v:4305$906 in module day2_opt_a_range_sum_engine.
+Marked 1 switch rules as full_case in process $proc$build/day2_opt_a_range_sum_engine.v:4291$901 in module day2_opt_a_range_sum_engine.
+Marked 1 switch rules as full_case in process $proc$build/day2_opt_a_range_sum_engine.v:4272$889 in module day2_opt_a_range_sum_engine.
+Marked 1 switch rules as full_case in process $proc$build/day2_opt_a_range_sum_engine.v:3993$841 in module day2_opt_a_range_sum_engine.
+Marked 1 switch rules as full_case in process $proc$build/day2_opt_a_range_sum_engine.v:2024$42 in module day2_opt_a_range_sum_engine.
+Marked 1 switch rules as full_case in process $proc$build/day2_opt_a_range_sum_engine.v:1997$21 in module day2_opt_a_range_sum_engine.
+Removed a total of 0 dead cases.
+
+3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 9 redundant assignments.
+Promoted 0 assignments to connections.
+
+3.4. Executing PROC_INIT pass (extract init attributes).
+
+3.5. Executing PROC_ARST pass (detect async resets in processes).
+
+3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~9 debug messages>
+
+3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\day2_opt_a_range_sum_engine.$proc$build/day2_opt_a_range_sum_engine.v:4342$923'.
+     1/1: $0\_1973[63:0]
+Creating decoders for process `\day2_opt_a_range_sum_engine.$proc$build/day2_opt_a_range_sum_engine.v:4331$919'.
+     1/1: $0\_38[0:0]
+Creating decoders for process `\day2_opt_a_range_sum_engine.$proc$build/day2_opt_a_range_sum_engine.v:4317$912'.
+     1/1: $0\_35[0:0]
+Creating decoders for process `\day2_opt_a_range_sum_engine.$proc$build/day2_opt_a_range_sum_engine.v:4305$906'.
+     1/1: $0\_32[3:0]
+Creating decoders for process `\day2_opt_a_range_sum_engine.$proc$build/day2_opt_a_range_sum_engine.v:4291$901'.
+     1/1: $0\_1985[0:0]
+Creating decoders for process `\day2_opt_a_range_sum_engine.$proc$build/day2_opt_a_range_sum_engine.v:4272$889'.
+     1/1: $0\_49[63:0]
+Creating decoders for process `\day2_opt_a_range_sum_engine.$proc$build/day2_opt_a_range_sum_engine.v:3993$841'.
+     1/1: $0\_136[63:0]
+Creating decoders for process `\day2_opt_a_range_sum_engine.$proc$build/day2_opt_a_range_sum_engine.v:2024$42'.
+     1/1: $0\_1942[63:0]
+Creating decoders for process `\day2_opt_a_range_sum_engine.$proc$build/day2_opt_a_range_sum_engine.v:1997$21'.
+     1/1: $0\_46[63:0]
+
+3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\day2_opt_a_range_sum_engine.\_1973' using process `\day2_opt_a_range_sum_engine.$proc$build/day2_opt_a_range_sum_engine.v:4342$923'.
+  created $dff cell `$procdff$951' with positive edge clock.
+Creating register for signal `\day2_opt_a_range_sum_engine.\_38' using process `\day2_opt_a_range_sum_engine.$proc$build/day2_opt_a_range_sum_engine.v:4331$919'.
+  created $dff cell `$procdff$952' with positive edge clock.
+Creating register for signal `\day2_opt_a_range_sum_engine.\_35' using process `\day2_opt_a_range_sum_engine.$proc$build/day2_opt_a_range_sum_engine.v:4317$912'.
+  created $dff cell `$procdff$953' with positive edge clock.
+Creating register for signal `\day2_opt_a_range_sum_engine.\_32' using process `\day2_opt_a_range_sum_engine.$proc$build/day2_opt_a_range_sum_engine.v:4305$906'.
+  created $dff cell `$procdff$954' with positive edge clock.
+Creating register for signal `\day2_opt_a_range_sum_engine.\_1985' using process `\day2_opt_a_range_sum_engine.$proc$build/day2_opt_a_range_sum_engine.v:4291$901'.
+  created $dff cell `$procdff$955' with positive edge clock.
+Creating register for signal `\day2_opt_a_range_sum_engine.\_49' using process `\day2_opt_a_range_sum_engine.$proc$build/day2_opt_a_range_sum_engine.v:4272$889'.
+  created $dff cell `$procdff$956' with positive edge clock.
+Creating register for signal `\day2_opt_a_range_sum_engine.\_136' using process `\day2_opt_a_range_sum_engine.$proc$build/day2_opt_a_range_sum_engine.v:3993$841'.
+  created $dff cell `$procdff$957' with positive edge clock.
+Creating register for signal `\day2_opt_a_range_sum_engine.\_1942' using process `\day2_opt_a_range_sum_engine.$proc$build/day2_opt_a_range_sum_engine.v:2024$42'.
+  created $dff cell `$procdff$958' with positive edge clock.
+Creating register for signal `\day2_opt_a_range_sum_engine.\_46' using process `\day2_opt_a_range_sum_engine.$proc$build/day2_opt_a_range_sum_engine.v:1997$21'.
+  created $dff cell `$procdff$959' with positive edge clock.
+
+3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\day2_opt_a_range_sum_engine.$proc$build/day2_opt_a_range_sum_engine.v:4342$923'.
+Removing empty process `day2_opt_a_range_sum_engine.$proc$build/day2_opt_a_range_sum_engine.v:4342$923'.
+Found and cleaned up 1 empty switch in `\day2_opt_a_range_sum_engine.$proc$build/day2_opt_a_range_sum_engine.v:4331$919'.
+Removing empty process `day2_opt_a_range_sum_engine.$proc$build/day2_opt_a_range_sum_engine.v:4331$919'.
+Found and cleaned up 1 empty switch in `\day2_opt_a_range_sum_engine.$proc$build/day2_opt_a_range_sum_engine.v:4317$912'.
+Removing empty process `day2_opt_a_range_sum_engine.$proc$build/day2_opt_a_range_sum_engine.v:4317$912'.
+Found and cleaned up 1 empty switch in `\day2_opt_a_range_sum_engine.$proc$build/day2_opt_a_range_sum_engine.v:4305$906'.
+Removing empty process `day2_opt_a_range_sum_engine.$proc$build/day2_opt_a_range_sum_engine.v:4305$906'.
+Found and cleaned up 1 empty switch in `\day2_opt_a_range_sum_engine.$proc$build/day2_opt_a_range_sum_engine.v:4291$901'.
+Removing empty process `day2_opt_a_range_sum_engine.$proc$build/day2_opt_a_range_sum_engine.v:4291$901'.
+Found and cleaned up 1 empty switch in `\day2_opt_a_range_sum_engine.$proc$build/day2_opt_a_range_sum_engine.v:4272$889'.
+Removing empty process `day2_opt_a_range_sum_engine.$proc$build/day2_opt_a_range_sum_engine.v:4272$889'.
+Found and cleaned up 1 empty switch in `\day2_opt_a_range_sum_engine.$proc$build/day2_opt_a_range_sum_engine.v:3993$841'.
+Removing empty process `day2_opt_a_range_sum_engine.$proc$build/day2_opt_a_range_sum_engine.v:3993$841'.
+Found and cleaned up 1 empty switch in `\day2_opt_a_range_sum_engine.$proc$build/day2_opt_a_range_sum_engine.v:2024$42'.
+Removing empty process `day2_opt_a_range_sum_engine.$proc$build/day2_opt_a_range_sum_engine.v:2024$42'.
+Found and cleaned up 1 empty switch in `\day2_opt_a_range_sum_engine.$proc$build/day2_opt_a_range_sum_engine.v:1997$21'.
+Removing empty process `day2_opt_a_range_sum_engine.$proc$build/day2_opt_a_range_sum_engine.v:1997$21'.
+Cleaned up 9 empty switches.
+
+3.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module day2_opt_a_range_sum_engine.
+<suppressed ~214 debug messages>
+
+4. Executing OPT pass (performing simple optimizations).
+
+4.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module day2_opt_a_range_sum_engine.
+
+4.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\day2_opt_a_range_sum_engine'.
+<suppressed ~21 debug messages>
+Removed a total of 7 cells.
+
+4.3. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $procdff$959 ($dff) from module day2_opt_a_range_sum_engine (D = \_1935, Q = \_46, rval = 64'0000000000000000000000000000000000000000000000000000000000000000).
+Adding SRST signal on $procdff$958 ($dff) from module day2_opt_a_range_sum_engine (D = \_1968, Q = \_1942, rval = 64'0000000000000000000000000000000000000000000000000000000000000000).
+Adding SRST signal on $procdff$957 ($dff) from module day2_opt_a_range_sum_engine (D = \_1977, Q = \_136, rval = 64'0000000000000000000000000000000000000000000000000000000000000000).
+Adding SRST signal on $procdff$956 ($dff) from module day2_opt_a_range_sum_engine (D = \_1980, Q = \_49, rval = 64'0000000000000000000000000000000000000000000000000000000000000000).
+Adding SRST signal on $procdff$955 ($dff) from module day2_opt_a_range_sum_engine (D = \_1986, Q = \_1985, rval = 1'0).
+Adding SRST signal on $procdff$954 ($dff) from module day2_opt_a_range_sum_engine (D = \_1993, Q = \_32, rval = 4'0000).
+Adding SRST signal on $procdff$953 ($dff) from module day2_opt_a_range_sum_engine (D = \_2000, Q = \_35, rval = 1'0).
+Adding SRST signal on $procdff$952 ($dff) from module day2_opt_a_range_sum_engine (D = \_2005, Q = \_38, rval = 1'0).
+Adding SRST signal on $procdff$951 ($dff) from module day2_opt_a_range_sum_engine (D = \_2035, Q = \_1973, rval = 64'0000000000000000000000000000000000000000000000000000000000000000).
+
+4.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \day2_opt_a_range_sum_engine..
+Removed 19 unused cells and 946 unused wires.
+<suppressed ~25 debug messages>
+
+4.5. Rerunning OPT passes. (Removed registers in this run.)
+
+4.6. Executing OPT_EXPR pass (perform const folding).
+Optimizing module day2_opt_a_range_sum_engine.
+
+4.7. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\day2_opt_a_range_sum_engine'.
+<suppressed ~24 debug messages>
+Removed a total of 8 cells.
+
+4.8. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $auto$ff.cc:337:slice$984 ($sdff) from module day2_opt_a_range_sum_engine (D = \_2034, Q = \_1973).
+Adding EN signal on $auto$ff.cc:337:slice$981 ($sdff) from module day2_opt_a_range_sum_engine (D = \_2005, Q = \_38).
+Adding EN signal on $auto$ff.cc:337:slice$978 ($sdff) from module day2_opt_a_range_sum_engine (D = 1'1, Q = \_35).
+Adding SRST signal on $auto$ff.cc:337:slice$975 ($sdff) from module day2_opt_a_range_sum_engine (D = \_1991, Q = \_32, rval = 4'0000).
+Adding EN signal on $auto$ff.cc:337:slice$992 ($sdff) from module day2_opt_a_range_sum_engine (D = \_1990, Q = \_32).
+Adding EN signal on $auto$ff.cc:337:slice$972 ($sdff) from module day2_opt_a_range_sum_engine (D = \last, Q = \_1985).
+Adding EN signal on $auto$ff.cc:337:slice$969 ($sdff) from module day2_opt_a_range_sum_engine (D = \to_, Q = \_49).
+Adding EN signal on $auto$ff.cc:337:slice$966 ($sdff) from module day2_opt_a_range_sum_engine (D = \from_, Q = \_136).
+Adding EN signal on $auto$ff.cc:337:slice$963 ($sdff) from module day2_opt_a_range_sum_engine (D = \_1967, Q = \_1942).
+Adding EN signal on $auto$ff.cc:337:slice$960 ($sdff) from module day2_opt_a_range_sum_engine (D = \_1934, Q = \_46).
+
+4.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \day2_opt_a_range_sum_engine..
+Removed 9 unused cells and 31 unused wires.
+<suppressed ~33 debug messages>
+
+4.10. Rerunning OPT passes. (Removed registers in this run.)
+
+4.11. Executing OPT_EXPR pass (perform const folding).
+Optimizing module day2_opt_a_range_sum_engine.
+<suppressed ~1 debug messages>
+
+4.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\day2_opt_a_range_sum_engine'.
+Removed a total of 0 cells.
+
+4.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \day2_opt_a_range_sum_engine..
+
+4.15. Finished fast OPT passes.
+
+5. Executing MEMORY pass.
+
+5.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+5.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+5.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+5.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+5.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+5.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \day2_opt_a_range_sum_engine..
+
+5.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+5.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+5.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \day2_opt_a_range_sum_engine..
+
+5.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+5.11. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+6. Executing OPT pass (performing simple optimizations).
+
+6.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module day2_opt_a_range_sum_engine.
+
+6.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\day2_opt_a_range_sum_engine'.
+Removed a total of 0 cells.
+
+6.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \day2_opt_a_range_sum_engine..
+
+6.5. Finished fast OPT passes.
+
+7. Executing TECHMAP pass (map to technology primitives).
+
+7.1. Executing Verilog-2005 frontend: /opt/homebrew/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/opt/homebrew/bin/../share/yosys/techmap.v' to AST representation.
+verilog frontend filename /opt/homebrew/bin/../share/yosys/techmap.v
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Generating RTLIL representation for module `\$connect'.
+Generating RTLIL representation for module `\$input_port'.
+Successfully finished Verilog frontend.
+
+7.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $sdffe.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $reduce_bool.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $and.
+Running "alumacc" on wrapper $extern:wrap:$add:A_SIGNED=0:A_WIDTH=64:B_SIGNED=0:B_WIDTH=64:Y_WIDTH=64:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$add:A_SIGNED=0:A_WIDTH=64:B_SIGNED=0:B_WIDTH=64:Y_WIDTH=64:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$add:A_SIGNED=0:A_WIDTH=64:B_SIGNED=0:B_WIDTH=64:Y_WIDTH=64:394426c56d1a028ba8fdd5469b163e04011def47.
+Running "alumacc" on wrapper $extern:wrap:$sub:A_SIGNED=0:A_WIDTH=64:B_SIGNED=0:B_WIDTH=64:Y_WIDTH=64:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$sub:A_SIGNED=0:A_WIDTH=64:B_SIGNED=0:B_WIDTH=64:Y_WIDTH=64:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$sub:A_SIGNED=0:A_WIDTH=64:B_SIGNED=0:B_WIDTH=64:Y_WIDTH=64:394426c56d1a028ba8fdd5469b163e04011def47.
+Running "alumacc" on wrapper $extern:wrap:$lt:A_SIGNED=0:A_WIDTH=64:B_SIGNED=0:B_WIDTH=64:Y_WIDTH=1:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$lt:A_SIGNED=0:A_WIDTH=64:B_SIGNED=0:B_WIDTH=64:Y_WIDTH=1:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$lt:A_SIGNED=0:A_WIDTH=64:B_SIGNED=0:B_WIDTH=64:Y_WIDTH=1:394426c56d1a028ba8fdd5469b163e04011def47.
+Using extmapper simplemap for cells of type $not.
+Running "alumacc" on wrapper $extern:wrap:$mul:A_SIGNED=0:A_WIDTH=64:B_SIGNED=0:B_WIDTH=64:Y_WIDTH=128:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$mul:A_SIGNED=0:A_WIDTH=64:B_SIGNED=0:B_WIDTH=64:Y_WIDTH=128:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$mul:A_SIGNED=0:A_WIDTH=64:B_SIGNED=0:B_WIDTH=64:Y_WIDTH=128:394426c56d1a028ba8fdd5469b163e04011def47.
+Using extmapper simplemap for cells of type $eq.
+Running "alumacc" on wrapper $extern:wrap:$add:A_SIGNED=0:A_WIDTH=4:B_SIGNED=0:B_WIDTH=4:Y_WIDTH=4:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$add:A_SIGNED=0:A_WIDTH=4:B_SIGNED=0:B_WIDTH=4:Y_WIDTH=4:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$add:A_SIGNED=0:A_WIDTH=4:B_SIGNED=0:B_WIDTH=4:Y_WIDTH=4:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $paramod$039520c137afc9cd69dd56c3fb11a4e1fbe5f664\_90_alu for cells of type $alu.
+Using extmapper maccmap for cells of type $macc_v2.
+  add { \_778 \_787 \_796 \_805 \_814 \_823 \_832 \_841 \_850 \_859 \_868 \_877 \_886 \_895 \_904 \_913 \_922 \_931 \_940 \_949 \_958 \_967 \_976 \_985 \_994 \_1003 \_1012 \_1021 \_1030 \_1039 \_1048 \_1057 \_1066 \_1075 \_1084 \_1093 \_1102 \_1111 \_1120 \_1129 \_1138 \_1147 \_1156 \_1165 \_1174 \_1183 \_1192 \_1201 \_1210 \_1219 \_1228 \_1237 \_1246 \_1255 \_1264 \_1273 \_1282 \_1291 \_1300 \_1309 \_1318 \_1327 \_1336 \_1345 } * \_1348 (64x64 bits, unsigned)
+  add \_163 * { \_1361 \_1370 \_1379 \_1388 \_1397 \_1406 \_1415 \_1424 \_1433 \_1442 \_1451 \_1460 \_1469 \_1478 \_1487 \_1496 \_1505 \_1514 \_1523 \_1532 \_1541 \_1550 \_1559 \_1568 \_1577 \_1586 \_1595 \_1604 \_1613 \_1622 \_1631 \_1640 \_1649 \_1658 \_1667 \_1676 \_1685 \_1694 \_1703 \_1712 \_1721 \_1730 \_1739 \_1748 \_1757 \_1766 \_1775 \_1784 \_1793 \_1802 \_1811 \_1820 \_1829 \_1838 \_1847 \_1856 \_1865 \_1874 \_1883 \_1892 \_1901 \_1910 \_1919 \_1928 } (64x64 bits, unsigned)
+  add \_742 * \_1348 (64x64 bits, unsigned)
+  add { \_170 \_179 \_188 \_197 \_206 \_215 \_224 \_233 \_242 \_251 \_260 \_269 \_278 \_287 \_296 \_305 \_314 \_323 \_332 \_341 \_350 \_359 \_368 \_377 \_386 \_395 \_404 \_413 \_422 \_431 \_440 \_449 \_458 \_467 \_476 \_485 \_494 \_503 \_512 \_521 \_530 \_539 \_548 \_557 \_566 \_575 \_584 \_593 \_602 \_611 \_620 \_629 \_638 \_647 \_656 \_665 \_674 \_683 \_692 \_701 \_710 \_719 \_728 \_737 } * \_163 (64x64 bits, unsigned)
+Using template $paramod$740b056ede97228d3eae64ea2fdc81f0a33e0fe7\_90_alu for cells of type $alu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000010000000 for cells of type $fa.
+Using template $paramod$7e7bdf4b0adff8e15b2cb24084cd1b911e7a73b3\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $xor.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000001000000 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000001000000 for cells of type $lcu.
+Using extmapper simplemap for cells of type $pos.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000000100 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000100 for cells of type $lcu.
+Using extmapper simplemap for cells of type $or.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000010000000 for cells of type $lcu.
+No more expansions possible.
+<suppressed ~129037 debug messages>
+
+8. Executing OPT pass (performing simple optimizations).
+
+8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module day2_opt_a_range_sum_engine.
+<suppressed ~304825 debug messages>
+
+8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\day2_opt_a_range_sum_engine'.
+<suppressed ~267276 debug messages>
+Removed a total of 89092 cells.
+
+8.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+8.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \day2_opt_a_range_sum_engine..
+Removed 33543 unused cells and 87267 unused wires.
+<suppressed ~33734 debug messages>
+
+8.5. Finished fast OPT passes.
+{
+   "creator": "Yosys 0.60 (git sha1 5bafeb77dc71e054fa331ab9efa613e6fb0a1c49, clang++ 17.0.0 -fPIC -O3)",
+   "invocation": "stat -json ",
+   "modules": {
+      "\\day2_opt_a_range_sum_engine": {
+         "num_wires":         49895,
+         "num_wire_bits":     323953,
+         "num_pub_wires":     1739,
+         "num_pub_wire_bits": 80225,
+         "num_ports":         12,
+         "num_port_bits":     267,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         139315,
+         "num_submodules":       0,
+         "num_cells_by_type": {
+            "$_AND_": 58442,
+            "$_MUX_": 12422,
+            "$_NOT_": 9131,
+            "$_OR_": 29447,
+            "$_SDFFE_PP0P_": 327,
+            "$_XOR_": 29546
+         }
+      }
+   },
+      "design": {
+         "num_wires":         49895,
+         "num_wire_bits":     323953,
+         "num_pub_wires":     1739,
+         "num_pub_wire_bits": 80225,
+         "num_ports":         12,
+         "num_port_bits":     267,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         139315,
+         "num_submodules":       0,
+         "num_cells_by_type": {
+            "$_AND_": 58442,
+            "$_MUX_": 12422,
+            "$_NOT_": 9131,
+            "$_OR_": 29447,
+            "$_SDFFE_PP0P_": 327,
+            "$_XOR_": 29546
+         }
+      }
+}
+
+End of script. Logfile hash: 4cd0eeda8f, CPU: user 25.58s system 1.11s, MEM: 1432.84 MB peak
+Yosys 0.60 (git sha1 5bafeb77dc71e054fa331ab9efa613e6fb0a1c49, clang++ 17.0.0 -fPIC -O3)
+Time spent: 34% 12x opt_expr (9 sec), 20% 1x techmap (5 sec), ...

@@ -1,0 +1,7 @@
+(lang dune 3.16)
+(name aoc_hardcaml)
+(sections (lib .) (bin ../../bin) (doc ../../doc/aoc_hardcaml))
+(files
+ (lib (META dune-package opam))
+ (bin (aoc_hardcaml aoc_hardcaml_bench aoc_hardcaml_validate))
+ (doc (README.md)))

@@ -1,0 +1,1 @@
+These are not remotely good videos, but here are some very rough storyboards for the animations planned for each day of Advent of Code 2025. I was trying to see if I could use Copilot to help generate them, but it is spatially challenged so it didn't get too far

@@ -1,0 +1,559 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2025  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.60 (git sha1 5bafeb77dc71e054fa331ab9efa613e6fb0a1c49, clang++ 17.0.0 -fPIC -O3)
+
+-- Running command `read_verilog -sv build/day3_opt_c.v; hierarchy -top day3_opt_c; proc; opt -fast; memory; opt -fast; techmap; opt -fast; stat -json' --
+
+1. Executing Verilog-2005 frontend: build/day3_opt_c.v
+Parsing SystemVerilog input from `build/day3_opt_c.v' to AST representation.
+verilog frontend filename build/day3_opt_c.v
+Generating RTLIL representation for module `\day3_opt_c'.
+Successfully finished Verilog frontend.
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1. Analyzing design hierarchy..
+Top module:  \day3_opt_c
+
+2.2. Analyzing design hierarchy..
+Top module:  \day3_opt_c
+Removed 0 unused modules.
+
+3. Executing PROC pass (convert processes to netlists).
+
+3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$build/day3_opt_c.v:5846$590 in module day3_opt_c.
+Marked 1 switch rules as full_case in process $proc$build/day3_opt_c.v:5835$585 in module day3_opt_c.
+Marked 1 switch rules as full_case in process $proc$build/day3_opt_c.v:5816$576 in module day3_opt_c.
+Marked 1 switch rules as full_case in process $proc$build/day3_opt_c.v:5771$547 in module day3_opt_c.
+Marked 1 switch rules as full_case in process $proc$build/day3_opt_c.v:5506$542 in module day3_opt_c.
+Marked 1 switch rules as full_case in process $proc$build/day3_opt_c.v:5095$520 in module day3_opt_c.
+Marked 1 switch rules as full_case in process $proc$build/day3_opt_c.v:4830$514 in module day3_opt_c.
+Marked 1 switch rules as full_case in process $proc$build/day3_opt_c.v:4564$507 in module day3_opt_c.
+Marked 1 switch rules as full_case in process $proc$build/day3_opt_c.v:4298$500 in module day3_opt_c.
+Marked 1 switch rules as full_case in process $proc$build/day3_opt_c.v:4286$496 in module day3_opt_c.
+Marked 1 switch rules as full_case in process $proc$build/day3_opt_c.v:4021$491 in module day3_opt_c.
+Marked 1 switch rules as full_case in process $proc$build/day3_opt_c.v:3971$451 in module day3_opt_c.
+Marked 1 switch rules as full_case in process $proc$build/day3_opt_c.v:3706$446 in module day3_opt_c.
+Marked 1 switch rules as full_case in process $proc$build/day3_opt_c.v:3656$406 in module day3_opt_c.
+Marked 1 switch rules as full_case in process $proc$build/day3_opt_c.v:3391$401 in module day3_opt_c.
+Marked 1 switch rules as full_case in process $proc$build/day3_opt_c.v:3341$361 in module day3_opt_c.
+Marked 1 switch rules as full_case in process $proc$build/day3_opt_c.v:3076$356 in module day3_opt_c.
+Marked 1 switch rules as full_case in process $proc$build/day3_opt_c.v:3026$316 in module day3_opt_c.
+Marked 1 switch rules as full_case in process $proc$build/day3_opt_c.v:2761$311 in module day3_opt_c.
+Marked 1 switch rules as full_case in process $proc$build/day3_opt_c.v:2711$271 in module day3_opt_c.
+Marked 1 switch rules as full_case in process $proc$build/day3_opt_c.v:2446$266 in module day3_opt_c.
+Marked 1 switch rules as full_case in process $proc$build/day3_opt_c.v:2396$226 in module day3_opt_c.
+Marked 1 switch rules as full_case in process $proc$build/day3_opt_c.v:2131$221 in module day3_opt_c.
+Marked 1 switch rules as full_case in process $proc$build/day3_opt_c.v:2081$181 in module day3_opt_c.
+Marked 1 switch rules as full_case in process $proc$build/day3_opt_c.v:1816$176 in module day3_opt_c.
+Marked 1 switch rules as full_case in process $proc$build/day3_opt_c.v:1766$136 in module day3_opt_c.
+Marked 1 switch rules as full_case in process $proc$build/day3_opt_c.v:1501$131 in module day3_opt_c.
+Marked 1 switch rules as full_case in process $proc$build/day3_opt_c.v:1451$91 in module day3_opt_c.
+Marked 1 switch rules as full_case in process $proc$build/day3_opt_c.v:1186$86 in module day3_opt_c.
+Marked 1 switch rules as full_case in process $proc$build/day3_opt_c.v:1134$46 in module day3_opt_c.
+Marked 1 switch rules as full_case in process $proc$build/day3_opt_c.v:869$41 in module day3_opt_c.
+Marked 1 switch rules as full_case in process $proc$build/day3_opt_c.v:823$3 in module day3_opt_c.
+Removed a total of 0 dead cases.
+
+3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 32 redundant assignments.
+Promoted 0 assignments to connections.
+
+3.4. Executing PROC_INIT pass (extract init attributes).
+
+3.5. Executing PROC_ARST pass (detect async resets in processes).
+
+3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~32 debug messages>
+
+3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\day3_opt_c.$proc$build/day3_opt_c.v:5846$590'.
+     1/1: $0\_213[3:0]
+Creating decoders for process `\day3_opt_c.$proc$build/day3_opt_c.v:5835$585'.
+     1/1: $0\_34[1:0]
+Creating decoders for process `\day3_opt_c.$proc$build/day3_opt_c.v:5816$576'.
+     1/1: $0\_193[7:0]
+Creating decoders for process `\day3_opt_c.$proc$build/day3_opt_c.v:5771$547'.
+     1/1: $0\_249[3:0]
+Creating decoders for process `\day3_opt_c.$proc$build/day3_opt_c.v:5506$542'.
+     1/1: $0\_857[3:0]
+Creating decoders for process `\day3_opt_c.$proc$build/day3_opt_c.v:5095$520'.
+     1/1: $0\_246[3:0]
+Creating decoders for process `\day3_opt_c.$proc$build/day3_opt_c.v:4830$514'.
+     1/1: $0\_387[3:0]
+Creating decoders for process `\day3_opt_c.$proc$build/day3_opt_c.v:4564$507'.
+     1/1: $0\_517[3:0]
+Creating decoders for process `\day3_opt_c.$proc$build/day3_opt_c.v:4298$500'.
+     1/1: $0\_647[3:0]
+Creating decoders for process `\day3_opt_c.$proc$build/day3_opt_c.v:4286$496'.
+     1/1: $0\_258[3:0]
+Creating decoders for process `\day3_opt_c.$proc$build/day3_opt_c.v:4021$491'.
+     1/1: $0\_848[3:0]
+Creating decoders for process `\day3_opt_c.$proc$build/day3_opt_c.v:3971$451'.
+     1/1: $0\_267[3:0]
+Creating decoders for process `\day3_opt_c.$proc$build/day3_opt_c.v:3706$446'.
+     1/1: $0\_837[3:0]
+Creating decoders for process `\day3_opt_c.$proc$build/day3_opt_c.v:3656$406'.
+     1/1: $0\_276[3:0]
+Creating decoders for process `\day3_opt_c.$proc$build/day3_opt_c.v:3391$401'.
+     1/1: $0\_826[3:0]
+Creating decoders for process `\day3_opt_c.$proc$build/day3_opt_c.v:3341$361'.
+     1/1: $0\_285[3:0]
+Creating decoders for process `\day3_opt_c.$proc$build/day3_opt_c.v:3076$356'.
+     1/1: $0\_815[3:0]
+Creating decoders for process `\day3_opt_c.$proc$build/day3_opt_c.v:3026$316'.
+     1/1: $0\_294[3:0]
+Creating decoders for process `\day3_opt_c.$proc$build/day3_opt_c.v:2761$311'.
+     1/1: $0\_804[3:0]
+Creating decoders for process `\day3_opt_c.$proc$build/day3_opt_c.v:2711$271'.
+     1/1: $0\_303[3:0]
+Creating decoders for process `\day3_opt_c.$proc$build/day3_opt_c.v:2446$266'.
+     1/1: $0\_793[3:0]
+Creating decoders for process `\day3_opt_c.$proc$build/day3_opt_c.v:2396$226'.
+     1/1: $0\_312[3:0]
+Creating decoders for process `\day3_opt_c.$proc$build/day3_opt_c.v:2131$221'.
+     1/1: $0\_782[3:0]
+Creating decoders for process `\day3_opt_c.$proc$build/day3_opt_c.v:2081$181'.
+     1/1: $0\_321[3:0]
+Creating decoders for process `\day3_opt_c.$proc$build/day3_opt_c.v:1816$176'.
+     1/1: $0\_771[3:0]
+Creating decoders for process `\day3_opt_c.$proc$build/day3_opt_c.v:1766$136'.
+     1/1: $0\_330[3:0]
+Creating decoders for process `\day3_opt_c.$proc$build/day3_opt_c.v:1501$131'.
+     1/1: $0\_760[3:0]
+Creating decoders for process `\day3_opt_c.$proc$build/day3_opt_c.v:1451$91'.
+     1/1: $0\_339[3:0]
+Creating decoders for process `\day3_opt_c.$proc$build/day3_opt_c.v:1186$86'.
+     1/1: $0\_749[3:0]
+Creating decoders for process `\day3_opt_c.$proc$build/day3_opt_c.v:1134$46'.
+     1/1: $0\_51[3:0]
+Creating decoders for process `\day3_opt_c.$proc$build/day3_opt_c.v:869$41'.
+     1/1: $0\_188[3:0]
+Creating decoders for process `\day3_opt_c.$proc$build/day3_opt_c.v:823$3'.
+     1/1: $0\_43[0:0]
+
+3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\day3_opt_c.\_857' from process `\day3_opt_c.$proc$build/day3_opt_c.v:5506$542'.
+No latch inferred for signal `\day3_opt_c.\_246' from process `\day3_opt_c.$proc$build/day3_opt_c.v:5095$520'.
+No latch inferred for signal `\day3_opt_c.\_387' from process `\day3_opt_c.$proc$build/day3_opt_c.v:4830$514'.
+No latch inferred for signal `\day3_opt_c.\_517' from process `\day3_opt_c.$proc$build/day3_opt_c.v:4564$507'.
+No latch inferred for signal `\day3_opt_c.\_647' from process `\day3_opt_c.$proc$build/day3_opt_c.v:4298$500'.
+No latch inferred for signal `\day3_opt_c.\_848' from process `\day3_opt_c.$proc$build/day3_opt_c.v:4021$491'.
+No latch inferred for signal `\day3_opt_c.\_837' from process `\day3_opt_c.$proc$build/day3_opt_c.v:3706$446'.
+No latch inferred for signal `\day3_opt_c.\_826' from process `\day3_opt_c.$proc$build/day3_opt_c.v:3391$401'.
+No latch inferred for signal `\day3_opt_c.\_815' from process `\day3_opt_c.$proc$build/day3_opt_c.v:3076$356'.
+No latch inferred for signal `\day3_opt_c.\_804' from process `\day3_opt_c.$proc$build/day3_opt_c.v:2761$311'.
+No latch inferred for signal `\day3_opt_c.\_793' from process `\day3_opt_c.$proc$build/day3_opt_c.v:2446$266'.
+No latch inferred for signal `\day3_opt_c.\_782' from process `\day3_opt_c.$proc$build/day3_opt_c.v:2131$221'.
+No latch inferred for signal `\day3_opt_c.\_771' from process `\day3_opt_c.$proc$build/day3_opt_c.v:1816$176'.
+No latch inferred for signal `\day3_opt_c.\_760' from process `\day3_opt_c.$proc$build/day3_opt_c.v:1501$131'.
+No latch inferred for signal `\day3_opt_c.\_749' from process `\day3_opt_c.$proc$build/day3_opt_c.v:1186$86'.
+No latch inferred for signal `\day3_opt_c.\_188' from process `\day3_opt_c.$proc$build/day3_opt_c.v:869$41'.
+
+3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\day3_opt_c.\_213' using process `\day3_opt_c.$proc$build/day3_opt_c.v:5846$590'.
+  created $dff cell `$procdff$2705' with positive edge clock.
+Creating register for signal `\day3_opt_c.\_34' using process `\day3_opt_c.$proc$build/day3_opt_c.v:5835$585'.
+  created $dff cell `$procdff$2706' with positive edge clock.
+Creating register for signal `\day3_opt_c.\_193' using process `\day3_opt_c.$proc$build/day3_opt_c.v:5816$576'.
+  created $dff cell `$procdff$2707' with positive edge clock.
+Creating register for signal `\day3_opt_c.\_249' using process `\day3_opt_c.$proc$build/day3_opt_c.v:5771$547'.
+  created $dff cell `$procdff$2708' with positive edge clock.
+Creating register for signal `\day3_opt_c.\_258' using process `\day3_opt_c.$proc$build/day3_opt_c.v:4286$496'.
+  created $dff cell `$procdff$2709' with positive edge clock.
+Creating register for signal `\day3_opt_c.\_267' using process `\day3_opt_c.$proc$build/day3_opt_c.v:3971$451'.
+  created $dff cell `$procdff$2710' with positive edge clock.
+Creating register for signal `\day3_opt_c.\_276' using process `\day3_opt_c.$proc$build/day3_opt_c.v:3656$406'.
+  created $dff cell `$procdff$2711' with positive edge clock.
+Creating register for signal `\day3_opt_c.\_285' using process `\day3_opt_c.$proc$build/day3_opt_c.v:3341$361'.
+  created $dff cell `$procdff$2712' with positive edge clock.
+Creating register for signal `\day3_opt_c.\_294' using process `\day3_opt_c.$proc$build/day3_opt_c.v:3026$316'.
+  created $dff cell `$procdff$2713' with positive edge clock.
+Creating register for signal `\day3_opt_c.\_303' using process `\day3_opt_c.$proc$build/day3_opt_c.v:2711$271'.
+  created $dff cell `$procdff$2714' with positive edge clock.
+Creating register for signal `\day3_opt_c.\_312' using process `\day3_opt_c.$proc$build/day3_opt_c.v:2396$226'.
+  created $dff cell `$procdff$2715' with positive edge clock.
+Creating register for signal `\day3_opt_c.\_321' using process `\day3_opt_c.$proc$build/day3_opt_c.v:2081$181'.
+  created $dff cell `$procdff$2716' with positive edge clock.
+Creating register for signal `\day3_opt_c.\_330' using process `\day3_opt_c.$proc$build/day3_opt_c.v:1766$136'.
+  created $dff cell `$procdff$2717' with positive edge clock.
+Creating register for signal `\day3_opt_c.\_339' using process `\day3_opt_c.$proc$build/day3_opt_c.v:1451$91'.
+  created $dff cell `$procdff$2718' with positive edge clock.
+Creating register for signal `\day3_opt_c.\_51' using process `\day3_opt_c.$proc$build/day3_opt_c.v:1134$46'.
+  created $dff cell `$procdff$2719' with positive edge clock.
+Creating register for signal `\day3_opt_c.\_43' using process `\day3_opt_c.$proc$build/day3_opt_c.v:823$3'.
+  created $dff cell `$procdff$2720' with positive edge clock.
+
+3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\day3_opt_c.$proc$build/day3_opt_c.v:5846$590'.
+Removing empty process `day3_opt_c.$proc$build/day3_opt_c.v:5846$590'.
+Found and cleaned up 1 empty switch in `\day3_opt_c.$proc$build/day3_opt_c.v:5835$585'.
+Removing empty process `day3_opt_c.$proc$build/day3_opt_c.v:5835$585'.
+Found and cleaned up 1 empty switch in `\day3_opt_c.$proc$build/day3_opt_c.v:5816$576'.
+Removing empty process `day3_opt_c.$proc$build/day3_opt_c.v:5816$576'.
+Found and cleaned up 1 empty switch in `\day3_opt_c.$proc$build/day3_opt_c.v:5771$547'.
+Removing empty process `day3_opt_c.$proc$build/day3_opt_c.v:5771$547'.
+Found and cleaned up 1 empty switch in `\day3_opt_c.$proc$build/day3_opt_c.v:5506$542'.
+Removing empty process `day3_opt_c.$proc$build/day3_opt_c.v:5506$542'.
+Found and cleaned up 1 empty switch in `\day3_opt_c.$proc$build/day3_opt_c.v:5095$520'.
+Removing empty process `day3_opt_c.$proc$build/day3_opt_c.v:5095$520'.
+Found and cleaned up 1 empty switch in `\day3_opt_c.$proc$build/day3_opt_c.v:4830$514'.
+Removing empty process `day3_opt_c.$proc$build/day3_opt_c.v:4830$514'.
+Found and cleaned up 1 empty switch in `\day3_opt_c.$proc$build/day3_opt_c.v:4564$507'.
+Removing empty process `day3_opt_c.$proc$build/day3_opt_c.v:4564$507'.
+Found and cleaned up 1 empty switch in `\day3_opt_c.$proc$build/day3_opt_c.v:4298$500'.
+Removing empty process `day3_opt_c.$proc$build/day3_opt_c.v:4298$500'.
+Found and cleaned up 1 empty switch in `\day3_opt_c.$proc$build/day3_opt_c.v:4286$496'.
+Removing empty process `day3_opt_c.$proc$build/day3_opt_c.v:4286$496'.
+Found and cleaned up 1 empty switch in `\day3_opt_c.$proc$build/day3_opt_c.v:4021$491'.
+Removing empty process `day3_opt_c.$proc$build/day3_opt_c.v:4021$491'.
+Found and cleaned up 1 empty switch in `\day3_opt_c.$proc$build/day3_opt_c.v:3971$451'.
+Removing empty process `day3_opt_c.$proc$build/day3_opt_c.v:3971$451'.
+Found and cleaned up 1 empty switch in `\day3_opt_c.$proc$build/day3_opt_c.v:3706$446'.
+Removing empty process `day3_opt_c.$proc$build/day3_opt_c.v:3706$446'.
+Found and cleaned up 1 empty switch in `\day3_opt_c.$proc$build/day3_opt_c.v:3656$406'.
+Removing empty process `day3_opt_c.$proc$build/day3_opt_c.v:3656$406'.
+Found and cleaned up 1 empty switch in `\day3_opt_c.$proc$build/day3_opt_c.v:3391$401'.
+Removing empty process `day3_opt_c.$proc$build/day3_opt_c.v:3391$401'.
+Found and cleaned up 1 empty switch in `\day3_opt_c.$proc$build/day3_opt_c.v:3341$361'.
+Removing empty process `day3_opt_c.$proc$build/day3_opt_c.v:3341$361'.
+Found and cleaned up 1 empty switch in `\day3_opt_c.$proc$build/day3_opt_c.v:3076$356'.
+Removing empty process `day3_opt_c.$proc$build/day3_opt_c.v:3076$356'.
+Found and cleaned up 1 empty switch in `\day3_opt_c.$proc$build/day3_opt_c.v:3026$316'.
+Removing empty process `day3_opt_c.$proc$build/day3_opt_c.v:3026$316'.
+Found and cleaned up 1 empty switch in `\day3_opt_c.$proc$build/day3_opt_c.v:2761$311'.
+Removing empty process `day3_opt_c.$proc$build/day3_opt_c.v:2761$311'.
+Found and cleaned up 1 empty switch in `\day3_opt_c.$proc$build/day3_opt_c.v:2711$271'.
+Removing empty process `day3_opt_c.$proc$build/day3_opt_c.v:2711$271'.
+Found and cleaned up 1 empty switch in `\day3_opt_c.$proc$build/day3_opt_c.v:2446$266'.
+Removing empty process `day3_opt_c.$proc$build/day3_opt_c.v:2446$266'.
+Found and cleaned up 1 empty switch in `\day3_opt_c.$proc$build/day3_opt_c.v:2396$226'.
+Removing empty process `day3_opt_c.$proc$build/day3_opt_c.v:2396$226'.
+Found and cleaned up 1 empty switch in `\day3_opt_c.$proc$build/day3_opt_c.v:2131$221'.
+Removing empty process `day3_opt_c.$proc$build/day3_opt_c.v:2131$221'.
+Found and cleaned up 1 empty switch in `\day3_opt_c.$proc$build/day3_opt_c.v:2081$181'.
+Removing empty process `day3_opt_c.$proc$build/day3_opt_c.v:2081$181'.
+Found and cleaned up 1 empty switch in `\day3_opt_c.$proc$build/day3_opt_c.v:1816$176'.
+Removing empty process `day3_opt_c.$proc$build/day3_opt_c.v:1816$176'.
+Found and cleaned up 1 empty switch in `\day3_opt_c.$proc$build/day3_opt_c.v:1766$136'.
+Removing empty process `day3_opt_c.$proc$build/day3_opt_c.v:1766$136'.
+Found and cleaned up 1 empty switch in `\day3_opt_c.$proc$build/day3_opt_c.v:1501$131'.
+Removing empty process `day3_opt_c.$proc$build/day3_opt_c.v:1501$131'.
+Found and cleaned up 1 empty switch in `\day3_opt_c.$proc$build/day3_opt_c.v:1451$91'.
+Removing empty process `day3_opt_c.$proc$build/day3_opt_c.v:1451$91'.
+Found and cleaned up 1 empty switch in `\day3_opt_c.$proc$build/day3_opt_c.v:1186$86'.
+Removing empty process `day3_opt_c.$proc$build/day3_opt_c.v:1186$86'.
+Found and cleaned up 1 empty switch in `\day3_opt_c.$proc$build/day3_opt_c.v:1134$46'.
+Removing empty process `day3_opt_c.$proc$build/day3_opt_c.v:1134$46'.
+Found and cleaned up 1 empty switch in `\day3_opt_c.$proc$build/day3_opt_c.v:869$41'.
+Removing empty process `day3_opt_c.$proc$build/day3_opt_c.v:869$41'.
+Found and cleaned up 1 empty switch in `\day3_opt_c.$proc$build/day3_opt_c.v:823$3'.
+Removing empty process `day3_opt_c.$proc$build/day3_opt_c.v:823$3'.
+Cleaned up 32 empty switches.
+
+3.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module day3_opt_c.
+<suppressed ~18 debug messages>
+
+4. Executing OPT pass (performing simple optimizations).
+
+4.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module day3_opt_c.
+<suppressed ~11 debug messages>
+
+4.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\day3_opt_c'.
+<suppressed ~147 debug messages>
+Removed a total of 49 cells.
+
+4.3. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $procdff$2705 ($dff) from module day3_opt_c (D = $ternary$build/day3_opt_c.v:5844$589_Y, Q = \_213, rval = 4'0000).
+Adding EN signal on $auto$ff.cc:337:slice$2721 ($sdff) from module day3_opt_c (D = \_25, Q = \_213).
+Adding SRST signal on $procdff$2706 ($dff) from module day3_opt_c (D = $ternary$build/day3_opt_c.v:5833$584_Y, Q = \_34, rval = 2'00).
+Adding EN signal on $auto$ff.cc:337:slice$2723 ($sdff) from module day3_opt_c (D = $ternary$build/day3_opt_c.v:5833$584_Y, Q = \_34).
+Adding SRST signal on $procdff$2707 ($dff) from module day3_opt_c (D = $ternary$build/day3_opt_c.v:5814$575_Y, Q = \_193, rval = 8'00000000).
+Adding EN signal on $auto$ff.cc:337:slice$2727 ($sdff) from module day3_opt_c (D = $ternary$build/day3_opt_c.v:5814$575_Y, Q = \_193).
+Adding SRST signal on $procdff$2708 ($dff) from module day3_opt_c (D = $ternary$build/day3_opt_c.v:5769$546_Y, Q = \_249, rval = 4'0000).
+Adding EN signal on $auto$ff.cc:337:slice$2731 ($sdff) from module day3_opt_c (D = $ternary$build/day3_opt_c.v:5769$546_Y, Q = \_249).
+Adding SRST signal on $procdff$2709 ($dff) from module day3_opt_c (D = $ternary$build/day3_opt_c.v:4284$495_Y, Q = \_258, rval = 4'0000).
+Adding EN signal on $auto$ff.cc:337:slice$2735 ($sdff) from module day3_opt_c (D = $ternary$build/day3_opt_c.v:4284$495_Y, Q = \_258).
+Adding SRST signal on $procdff$2710 ($dff) from module day3_opt_c (D = $ternary$build/day3_opt_c.v:3969$450_Y, Q = \_267, rval = 4'0000).
+Adding EN signal on $auto$ff.cc:337:slice$2739 ($sdff) from module day3_opt_c (D = $ternary$build/day3_opt_c.v:3969$450_Y, Q = \_267).
+Adding SRST signal on $procdff$2711 ($dff) from module day3_opt_c (D = $ternary$build/day3_opt_c.v:3654$405_Y, Q = \_276, rval = 4'0000).
+Adding EN signal on $auto$ff.cc:337:slice$2743 ($sdff) from module day3_opt_c (D = $ternary$build/day3_opt_c.v:3654$405_Y, Q = \_276).
+Adding SRST signal on $procdff$2712 ($dff) from module day3_opt_c (D = $ternary$build/day3_opt_c.v:3339$360_Y, Q = \_285, rval = 4'0000).
+Adding EN signal on $auto$ff.cc:337:slice$2747 ($sdff) from module day3_opt_c (D = $ternary$build/day3_opt_c.v:3339$360_Y, Q = \_285).
+Adding SRST signal on $procdff$2713 ($dff) from module day3_opt_c (D = $ternary$build/day3_opt_c.v:3024$315_Y, Q = \_294, rval = 4'0000).
+Adding EN signal on $auto$ff.cc:337:slice$2751 ($sdff) from module day3_opt_c (D = $ternary$build/day3_opt_c.v:3024$315_Y, Q = \_294).
+Adding SRST signal on $procdff$2714 ($dff) from module day3_opt_c (D = $ternary$build/day3_opt_c.v:2709$270_Y, Q = \_303, rval = 4'0000).
+Adding EN signal on $auto$ff.cc:337:slice$2755 ($sdff) from module day3_opt_c (D = $ternary$build/day3_opt_c.v:2709$270_Y, Q = \_303).
+Adding SRST signal on $procdff$2715 ($dff) from module day3_opt_c (D = $ternary$build/day3_opt_c.v:2394$225_Y, Q = \_312, rval = 4'0000).
+Adding EN signal on $auto$ff.cc:337:slice$2759 ($sdff) from module day3_opt_c (D = $ternary$build/day3_opt_c.v:2394$225_Y, Q = \_312).
+Adding SRST signal on $procdff$2716 ($dff) from module day3_opt_c (D = $ternary$build/day3_opt_c.v:2079$180_Y, Q = \_321, rval = 4'0000).
+Adding EN signal on $auto$ff.cc:337:slice$2763 ($sdff) from module day3_opt_c (D = $ternary$build/day3_opt_c.v:2079$180_Y, Q = \_321).
+Adding SRST signal on $procdff$2717 ($dff) from module day3_opt_c (D = $ternary$build/day3_opt_c.v:1764$135_Y, Q = \_330, rval = 4'0000).
+Adding EN signal on $auto$ff.cc:337:slice$2767 ($sdff) from module day3_opt_c (D = $ternary$build/day3_opt_c.v:1764$135_Y, Q = \_330).
+Adding SRST signal on $procdff$2718 ($dff) from module day3_opt_c (D = $ternary$build/day3_opt_c.v:1449$90_Y, Q = \_339, rval = 4'0000).
+Adding EN signal on $auto$ff.cc:337:slice$2771 ($sdff) from module day3_opt_c (D = $ternary$build/day3_opt_c.v:1449$90_Y, Q = \_339).
+Adding SRST signal on $procdff$2719 ($dff) from module day3_opt_c (D = $ternary$build/day3_opt_c.v:1132$45_Y, Q = \_51, rval = 4'0000).
+Adding EN signal on $auto$ff.cc:337:slice$2775 ($sdff) from module day3_opt_c (D = $ternary$build/day3_opt_c.v:1132$45_Y, Q = \_51).
+Adding SRST signal on $procdff$2720 ($dff) from module day3_opt_c (D = $ternary$build/day3_opt_c.v:821$2_Y, Q = \_43, rval = 1'0).
+Adding EN signal on $auto$ff.cc:337:slice$2779 ($sdff) from module day3_opt_c (D = $ternary$build/day3_opt_c.v:821$2_Y, Q = \_43).
+
+4.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \day3_opt_c..
+Removed 17 unused cells and 643 unused wires.
+<suppressed ~20 debug messages>
+
+4.5. Rerunning OPT passes. (Removed registers in this run.)
+
+4.6. Executing OPT_EXPR pass (perform const folding).
+Optimizing module day3_opt_c.
+<suppressed ~15 debug messages>
+
+4.7. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\day3_opt_c'.
+<suppressed ~39 debug messages>
+Removed a total of 13 cells.
+
+4.8. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \day3_opt_c..
+Removed 0 unused cells and 13 unused wires.
+<suppressed ~1 debug messages>
+
+4.10. Finished fast OPT passes.
+
+5. Executing MEMORY pass.
+
+5.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+5.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+5.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+5.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+5.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+5.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \day3_opt_c..
+
+5.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+5.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+5.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \day3_opt_c..
+
+5.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+5.11. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+6. Executing OPT pass (performing simple optimizations).
+
+6.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module day3_opt_c.
+
+6.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\day3_opt_c'.
+Removed a total of 0 cells.
+
+6.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \day3_opt_c..
+
+6.5. Finished fast OPT passes.
+
+7. Executing TECHMAP pass (map to technology primitives).
+
+7.1. Executing Verilog-2005 frontend: /opt/homebrew/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/opt/homebrew/bin/../share/yosys/techmap.v' to AST representation.
+verilog frontend filename /opt/homebrew/bin/../share/yosys/techmap.v
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Generating RTLIL representation for module `\$connect'.
+Generating RTLIL representation for module `\$input_port'.
+Successfully finished Verilog frontend.
+
+7.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $reduce_bool.
+Using extmapper simplemap for cells of type $sdffe.
+Using extmapper simplemap for cells of type $mux.
+Running "alumacc" on wrapper $extern:wrap:$lt:A_SIGNED=0:A_WIDTH=4:B_SIGNED=0:B_WIDTH=4:Y_WIDTH=1:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$lt:A_SIGNED=0:A_WIDTH=4:B_SIGNED=0:B_WIDTH=4:Y_WIDTH=1:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$lt:A_SIGNED=0:A_WIDTH=4:B_SIGNED=0:B_WIDTH=4:Y_WIDTH=1:394426c56d1a028ba8fdd5469b163e04011def47.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $and.
+Running "alumacc" on wrapper $extern:wrap:$add:A_SIGNED=0:A_WIDTH=8:B_SIGNED=0:B_WIDTH=8:Y_WIDTH=8:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$add:A_SIGNED=0:A_WIDTH=8:B_SIGNED=0:B_WIDTH=8:Y_WIDTH=8:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$add:A_SIGNED=0:A_WIDTH=8:B_SIGNED=0:B_WIDTH=8:Y_WIDTH=8:394426c56d1a028ba8fdd5469b163e04011def47.
+Running "alumacc" on wrapper $extern:wrap:$mul:A_SIGNED=0:A_WIDTH=64:B_SIGNED=0:B_WIDTH=63:Y_WIDTH=127:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$mul:A_SIGNED=0:A_WIDTH=64:B_SIGNED=0:B_WIDTH=63:Y_WIDTH=127:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$mul:A_SIGNED=0:A_WIDTH=64:B_SIGNED=0:B_WIDTH=63:Y_WIDTH=127:394426c56d1a028ba8fdd5469b163e04011def47.
+Running "alumacc" on wrapper $extern:wrap:$add:A_SIGNED=0:A_WIDTH=64:B_SIGNED=0:B_WIDTH=64:Y_WIDTH=64:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$add:A_SIGNED=0:A_WIDTH=64:B_SIGNED=0:B_WIDTH=64:Y_WIDTH=64:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$add:A_SIGNED=0:A_WIDTH=64:B_SIGNED=0:B_WIDTH=64:Y_WIDTH=64:394426c56d1a028ba8fdd5469b163e04011def47.
+Running "alumacc" on wrapper $extern:wrap:$sub:A_SIGNED=0:A_WIDTH=8:B_SIGNED=0:B_WIDTH=8:Y_WIDTH=8:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$sub:A_SIGNED=0:A_WIDTH=8:B_SIGNED=0:B_WIDTH=8:Y_WIDTH=8:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$sub:A_SIGNED=0:A_WIDTH=8:B_SIGNED=0:B_WIDTH=8:Y_WIDTH=8:394426c56d1a028ba8fdd5469b163e04011def47.
+Running "alumacc" on wrapper $extern:wrap:$lt:A_SIGNED=0:A_WIDTH=8:B_SIGNED=0:B_WIDTH=8:Y_WIDTH=1:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$lt:A_SIGNED=0:A_WIDTH=8:B_SIGNED=0:B_WIDTH=8:Y_WIDTH=1:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$lt:A_SIGNED=0:A_WIDTH=8:B_SIGNED=0:B_WIDTH=8:Y_WIDTH=1:394426c56d1a028ba8fdd5469b163e04011def47.
+Using extmapper simplemap for cells of type $eq.
+Using extmapper simplemap for cells of type $logic_not.
+Using extmapper simplemap for cells of type $or.
+Using template $paramod$631af69435734d89ab33e91568653fd3102cc032\_90_pmux for cells of type $pmux.
+Using template $paramod$a1bc51c02ce12ac21eb18988e83292af48ed7d72\_90_alu for cells of type $alu.
+Using template $paramod$740b056ede97228d3eae64ea2fdc81f0a33e0fe7\_90_alu for cells of type $alu.
+Using template $paramod$039520c137afc9cd69dd56c3fb11a4e1fbe5f664\_90_alu for cells of type $alu.
+Using extmapper maccmap for cells of type $macc_v2.
+  add \_932 * 63'000000000000000000000000000000000000000000000000000000000000101 (64x63 bits, unsigned)
+  add \_939 * 63'000000000000000000000000000000000000000000000000000000000000101 (64x63 bits, unsigned)
+  add \_946 * 63'000000000000000000000000000000000000000000000000000000000000101 (64x63 bits, unsigned)
+  add \_953 * 63'000000000000000000000000000000000000000000000000000000000000101 (64x63 bits, unsigned)
+  add \_960 * 63'000000000000000000000000000000000000000000000000000000000000101 (64x63 bits, unsigned)
+  add \_967 * 63'000000000000000000000000000000000000000000000000000000000000101 (64x63 bits, unsigned)
+  add \_974 * 63'000000000000000000000000000000000000000000000000000000000000101 (64x63 bits, unsigned)
+  add \_981 * 63'000000000000000000000000000000000000000000000000000000000000101 (64x63 bits, unsigned)
+  add \_925 * 63'000000000000000000000000000000000000000000000000000000000000101 (64x63 bits, unsigned)
+  add \_918 * 63'000000000000000000000000000000000000000000000000000000000000101 (64x63 bits, unsigned)
+  add \_911 * 63'000000000000000000000000000000000000000000000000000000000000101 (64x63 bits, unsigned)
+Using extmapper simplemap for cells of type $reduce_or.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000001111111 for cells of type $fa.
+Using template $paramod$0b29a377be1af764bc7e97f2568af2e7ddaa22d3\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $xor.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000001000 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000001000 for cells of type $lcu.
+Using extmapper simplemap for cells of type $pos.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000000100 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000100 for cells of type $lcu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000001000000 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000001000000 for cells of type $lcu.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000001111111 for cells of type $lcu.
+No more expansions possible.
+<suppressed ~23192 debug messages>
+
+8. Executing OPT pass (performing simple optimizations).
+
+8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module day3_opt_c.
+<suppressed ~553937 debug messages>
+
+8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\day3_opt_c'.
+<suppressed ~54819 debug messages>
+Removed a total of 18273 cells.
+
+8.3. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $auto$ff.cc:337:slice$2909 ($_SDFFE_PP0P_) from module day3_opt_c (D = \_23 [0], Q = \_193 [0]).
+Adding EN signal on $auto$ff.cc:337:slice$2910 ($_SDFFE_PP0P_) from module day3_opt_c (D = \_23 [1], Q = \_193 [1]).
+
+8.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \day3_opt_c..
+Removed 1045 unused cells and 41565 unused wires.
+<suppressed ~1110 debug messages>
+
+8.5. Rerunning OPT passes. (Removed registers in this run.)
+
+8.6. Executing OPT_EXPR pass (perform const folding).
+Optimizing module day3_opt_c.
+<suppressed ~4 debug messages>
+
+8.7. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\day3_opt_c'.
+<suppressed ~15 debug messages>
+Removed a total of 5 cells.
+
+8.8. Executing OPT_DFF pass (perform DFF optimizations).
+
+8.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \day3_opt_c..
+Removed 0 unused cells and 6 unused wires.
+<suppressed ~1 debug messages>
+
+8.10. Finished fast OPT passes.
+{
+   "creator": "Yosys 0.60 (git sha1 5bafeb77dc71e054fa331ab9efa613e6fb0a1c49, clang++ 17.0.0 -fPIC -O3)",
+   "invocation": "stat -json ",
+   "modules": {
+      "\\day3_opt_c": {
+         "num_wires":         6281,
+         "num_wire_bits":     53780,
+         "num_pub_wires":     740,
+         "num_pub_wire_bits": 7650,
+         "num_ports":         8,
+         "num_port_bits":     592,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         33473,
+         "num_submodules":       0,
+         "num_cells_by_type": {
+            "$_AND_": 12784,
+            "$_MUX_": 1313,
+            "$_NOT_": 2338,
+            "$_OR_": 13617,
+            "$_SDFFE_PP0P_": 63,
+            "$_XOR_": 3358
+         }
+      }
+   },
+      "design": {
+         "num_wires":         6281,
+         "num_wire_bits":     53780,
+         "num_pub_wires":     740,
+         "num_pub_wire_bits": 7650,
+         "num_ports":         8,
+         "num_port_bits":     592,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         33473,
+         "num_submodules":       0,
+         "num_cells_by_type": {
+            "$_AND_": 12784,
+            "$_MUX_": 1313,
+            "$_NOT_": 2338,
+            "$_OR_": 13617,
+            "$_SDFFE_PP0P_": 63,
+            "$_XOR_": 3358
+         }
+      }
+}
+
+End of script. Logfile hash: 80ef0436f0, CPU: user 10.51s system 0.50s, MEM: 1235.31 MB peak
+Yosys 0.60 (git sha1 5bafeb77dc71e054fa331ab9efa613e6fb0a1c49, clang++ 17.0.0 -fPIC -O3)
+Time spent: 38% 14x opt_expr (4 sec), 27% 1x techmap (2 sec), ...

@@ -1,0 +1,18 @@
+# dune runtest --force
+# OCAMLPARAM: unset
+# Shared cache: disabled
+# Shared cache location: /Users/tatestaples/.cache/dune/db
+# Workspace root: /Users/tatestaples/Code/AdventOfCode2025/hardcaml
+# Auto-detected concurrency: 8
+# Dune context:
+#  { name = "default"
+#  ; kind = "default"
+#  ; profile = Dev
+#  ; merlin = true
+#  ; fdo_target_exe = None
+#  ; build_dir = In_build_dir "default"
+#  ; instrument_with = []
+#  }
+$ /Users/tatestaples/.opam/default/bin/ocamlc.opt -config > /var/folders/p8/zvw_h9yx0rjb1g7xhctdry9m0000gn/T/dune_0ce25b_output
+$ (cd _build/default/test && ./test_aoc_hardcaml.exe)
+> HardCaml tests passed
